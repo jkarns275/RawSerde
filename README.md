@@ -2,7 +2,7 @@
 RawSerde is a serialization library that allows raw serialization and deserialization of non-reference types.
 
 # Example
-##
+## Cargo.toml
 ```toml
 [dependencies]
 raw_serde = "*"
