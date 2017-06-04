@@ -15,9 +15,9 @@ raw_serde = "*"
 
     #[derive(RawSerialize, RawDeserialize, Debug, PartialEq, Eq)]
     struct test_struct {
-	      x: i32,
-	      y: i32,
-          z: i128
+	    x: i32,
+	    y: i32,
+        z: i128
     }
 
     fn test() {
