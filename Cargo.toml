@@ -1,6 +1,8 @@
 [package]
 name = "raw_serde"
 version = "0.1.0"
+license = "MIT"
+description = "A serialization library"
 authors = ["Joshua Karns <jkarns275@gmail.com>"]
 
 [dependencies]
