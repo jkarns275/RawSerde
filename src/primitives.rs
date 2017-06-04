@@ -21,13 +21,13 @@ const SIZE_OF_I8:  usize = 1;
 
 impl RawSerialize for usize {
     #[inline(always)]
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let x = [*self];
         let y = unsafe { slice::from_raw_parts((&x).as_ptr() as *const u8, 8) };
         if let Err(e) = to.write_all(y) {
             Err(e)
         } else {
-            Ok(())
+            Ok(mem::size_of::<usize>() as u64)
         }
     }
 }
@@ -46,25 +46,26 @@ macro_rules! serialize_primitive {
     ( $prim:ty, $size:expr ) => (
         impl RawSerialize for $prim {
             #[inline(always)]
-            fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+            fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
                 let x = [*self];
                 let y = unsafe { slice::from_raw_parts((&x).as_ptr() as *const u8, $size) };
                 if let Err(e) = to.write_all(y) {
                     Err(e)
                 } else {
-                    Ok(())
+                    Ok($size as u64)
                 }
             }
-            fn raw_serialize_slice(x: &[Self], to: &mut Write) -> Result<(), Error> {
-                match (x.len() as u64).raw_serialize(to) {
+            fn raw_serialize_slice(x: &[Self], to: &mut Write) -> Result<u64, Error> {
+                let len = x.len() as u64;
+                match len.raw_serialize(to) {
                     Err(e) => return Err(e),
                     Ok(_) => ()
                 };
-                let y = unsafe { slice::from_raw_parts(x.as_ptr() as *const u8, $size * x.len()) };
+                let y = unsafe { slice::from_raw_parts(x.as_ptr() as *const u8, $size * (len as usize)) };
                 if let Err(e) = to.write_all(y) {
                     Err(e)
                 } else {
-                    Ok(())
+                    Ok($size as u64 * len + 8)
                 }
             }
         }
@@ -95,16 +96,17 @@ macro_rules! serialize_primitive {
         }
 
         impl<'b> RawSerialize for &'b [$prim] {
-            fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
-                match (self.len() as u64).raw_serialize(to) {
+            fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+                let len = self.len() as u64;
+                match len.raw_serialize(to) {
                     Err(e) => return Err(e),
-                    Ok(_) => ()
+                    Ok(_) => {}
                 };
                 let y = unsafe { slice::from_raw_parts((*self).as_ptr() as *const u8, $size * self.len()) };
                 if let Err(e) = to.write_all(&y) {
                     Err(e)
                 } else {
-                    Ok(())
+                    Ok($size as u64 * len + 8)
                 }
             }
         }
@@ -129,7 +131,7 @@ serialize_primitive!(i128, SIZE_OF_I128);
 serialize_primitive!(u128, SIZE_OF_U128);
 
 impl RawSerialize for String {
-    fn raw_serialize(&self, from: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, from: &mut Write) -> Result<u64, Error> {
         self.as_bytes().raw_serialize(from)
     }
 }

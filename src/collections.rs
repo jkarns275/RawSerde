@@ -5,17 +5,19 @@ use std::collections::*;
 use std::hash::Hash;
 
 impl<K, V> RawSerialize for HashMap<K, V> where K: Hash + Eq + RawSerialize, V: RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for (k, v) in self.iter() {
-            check!(k.raw_serialize(to));
-            check!(v.raw_serialize(to));
+            let size_k;
+            let size_v;
+            check!(k.raw_serialize(to), size_k);
+            check!(v.raw_serialize(to), size_v);
+            size += size_k + size_v;
         }
-        Ok(())
+        Ok(size)
     }
 }
-
-
 
 impl<K, V> RawDeserialize for HashMap<K, V> where K: Hash + Eq + RawDeserialize, V: RawDeserialize {
     fn raw_deserialize(read: &mut Read) -> Result<Self, Error> {
@@ -35,13 +37,17 @@ impl<K, V> RawDeserialize for HashMap<K, V> where K: Hash + Eq + RawDeserialize,
 
 impl<K, V> RawSerialize for BTreeMap<K, V> where
     K: RawSerialize + Eq + Ord, V: RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for (k, v) in self.iter() {
-            check!(k.raw_serialize(to));
-            check!(v.raw_serialize(to));
+            let size_k;
+            let size_v;
+            check!(k.raw_serialize(to), size_k);
+            check!(v.raw_serialize(to), size_v);
+            size += size_k + size_v;
         }
-        Ok(())
+        Ok(size)
     }
 
 }
@@ -64,12 +70,15 @@ impl<K, V> RawDeserialize for BTreeMap<K, V> where
 }
 
 impl<K> RawSerialize for VecDeque<K> where K: RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for k in self.iter() {
-            check!(k.raw_serialize(to));
+            let size_k;
+            check!(k.raw_serialize(to), size_k);
+            size += size_k;
         }
-        Ok(())
+        Ok(size)
     }
 }
 
@@ -90,12 +99,15 @@ impl<K> RawDeserialize for VecDeque<K> where K: RawDeserialize {
 
 
 impl<K> RawSerialize for Vec<K> where K: RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for k in self.iter() {
-            check!(k.raw_serialize(to));
+            let size_k;
+            check!(k.raw_serialize(to), size_k);
+            size += size_k;
         }
-        Ok(())
+        Ok(size)
     }
 }
 
@@ -114,12 +126,15 @@ impl<K> RawDeserialize for Vec<K> where K: RawDeserialize {
 }
 
 impl<K> RawSerialize for LinkedList<K> where K: RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for k in self.iter() {
-            check!(k.raw_serialize(to));
+            let size_k;
+            check!(k.raw_serialize(to), size_k);
+            size += size_k;
         }
-        Ok(())
+        Ok(size)
     }
 }
 
@@ -138,12 +153,15 @@ impl<K> RawDeserialize for LinkedList<K> where K: RawDeserialize {
 }
 
 impl<K> RawSerialize for BTreeSet<K> where K: Eq + Ord + RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for k in self.iter() {
-            check!(k.raw_serialize(to));
+            let size_k;
+            check!(k.raw_serialize(to), size_k);
+            size += size_k;
         }
-        Ok(())
+        Ok(size)
     }
 }
 
@@ -163,12 +181,15 @@ impl<K> RawDeserialize for BTreeSet<K> where K: Eq + Ord + RawDeserialize {
 
 
 impl<K> RawSerialize for HashSet<K> where K: Hash + Eq + RawSerialize {
-    fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        let mut size = 8;
         check!((self.len() as u64).raw_serialize(to));
         for k in self.iter() {
-            check!(k.raw_serialize(to));
+            let size_k;
+            check!(k.raw_serialize(to), size_k);
+            size += size_k;
         }
-        Ok(())
+        Ok(size)
     }
 }
 

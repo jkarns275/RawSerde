@@ -4,12 +4,11 @@ use std::io::{ Error, Read, Write };
 use std::slice;
 use std::mem;
 
-
 impl RawSerialize for [u8; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 1], *const u8>(&(*self) as *const [u8; 1]), 1 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(1)    }
 }
 impl RawDeserialize for [u8; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 1], Error> {
@@ -24,10 +23,10 @@ impl RawDeserialize for [u8; 1] {
 }
 
 impl RawSerialize for [u8; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 2], *const u8>(&(*self) as *const [u8; 2]), 2 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(2)    }
 }
 impl RawDeserialize for [u8; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 2], Error> {
@@ -42,10 +41,10 @@ impl RawDeserialize for [u8; 2] {
 }
 
 impl RawSerialize for [u8; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 3], *const u8>(&(*self) as *const [u8; 3]), 3 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(3)    }
 }
 impl RawDeserialize for [u8; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 3], Error> {
@@ -60,10 +59,10 @@ impl RawDeserialize for [u8; 3] {
 }
 
 impl RawSerialize for [u8; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 4], *const u8>(&(*self) as *const [u8; 4]), 4 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [u8; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 4], Error> {
@@ -78,10 +77,10 @@ impl RawDeserialize for [u8; 4] {
 }
 
 impl RawSerialize for [u8; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 5], *const u8>(&(*self) as *const [u8; 5]), 5 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(5)    }
 }
 impl RawDeserialize for [u8; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 5], Error> {
@@ -96,10 +95,10 @@ impl RawDeserialize for [u8; 5] {
 }
 
 impl RawSerialize for [u8; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 6], *const u8>(&(*self) as *const [u8; 6]), 6 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(6)    }
 }
 impl RawDeserialize for [u8; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 6], Error> {
@@ -114,10 +113,10 @@ impl RawDeserialize for [u8; 6] {
 }
 
 impl RawSerialize for [u8; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 7], *const u8>(&(*self) as *const [u8; 7]), 7 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(7)    }
 }
 impl RawDeserialize for [u8; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 7], Error> {
@@ -132,10 +131,10 @@ impl RawDeserialize for [u8; 7] {
 }
 
 impl RawSerialize for [u8; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 8], *const u8>(&(*self) as *const [u8; 8]), 8 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [u8; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 8], Error> {
@@ -150,10 +149,10 @@ impl RawDeserialize for [u8; 8] {
 }
 
 impl RawSerialize for [u8; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 9], *const u8>(&(*self) as *const [u8; 9]), 9 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(9)    }
 }
 impl RawDeserialize for [u8; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 9], Error> {
@@ -168,10 +167,10 @@ impl RawDeserialize for [u8; 9] {
 }
 
 impl RawSerialize for [u8; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 10], *const u8>(&(*self) as *const [u8; 10]), 10 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(10)    }
 }
 impl RawDeserialize for [u8; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 10], Error> {
@@ -186,10 +185,10 @@ impl RawDeserialize for [u8; 10] {
 }
 
 impl RawSerialize for [u8; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 11], *const u8>(&(*self) as *const [u8; 11]), 11 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(11)    }
 }
 impl RawDeserialize for [u8; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 11], Error> {
@@ -204,10 +203,10 @@ impl RawDeserialize for [u8; 11] {
 }
 
 impl RawSerialize for [u8; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 12], *const u8>(&(*self) as *const [u8; 12]), 12 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [u8; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 12], Error> {
@@ -222,10 +221,10 @@ impl RawDeserialize for [u8; 12] {
 }
 
 impl RawSerialize for [u8; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 13], *const u8>(&(*self) as *const [u8; 13]), 13 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(13)    }
 }
 impl RawDeserialize for [u8; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 13], Error> {
@@ -240,10 +239,10 @@ impl RawDeserialize for [u8; 13] {
 }
 
 impl RawSerialize for [u8; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 14], *const u8>(&(*self) as *const [u8; 14]), 14 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(14)    }
 }
 impl RawDeserialize for [u8; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 14], Error> {
@@ -258,10 +257,10 @@ impl RawDeserialize for [u8; 14] {
 }
 
 impl RawSerialize for [u8; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 15], *const u8>(&(*self) as *const [u8; 15]), 15 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(15)    }
 }
 impl RawDeserialize for [u8; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 15], Error> {
@@ -276,10 +275,10 @@ impl RawDeserialize for [u8; 15] {
 }
 
 impl RawSerialize for [u8; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 16], *const u8>(&(*self) as *const [u8; 16]), 16 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [u8; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 16], Error> {
@@ -294,10 +293,10 @@ impl RawDeserialize for [u8; 16] {
 }
 
 impl RawSerialize for [u8; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 17], *const u8>(&(*self) as *const [u8; 17]), 17 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(17)    }
 }
 impl RawDeserialize for [u8; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 17], Error> {
@@ -312,10 +311,10 @@ impl RawDeserialize for [u8; 17] {
 }
 
 impl RawSerialize for [u8; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 18], *const u8>(&(*self) as *const [u8; 18]), 18 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(18)    }
 }
 impl RawDeserialize for [u8; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 18], Error> {
@@ -330,10 +329,10 @@ impl RawDeserialize for [u8; 18] {
 }
 
 impl RawSerialize for [u8; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 19], *const u8>(&(*self) as *const [u8; 19]), 19 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(19)    }
 }
 impl RawDeserialize for [u8; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 19], Error> {
@@ -348,10 +347,10 @@ impl RawDeserialize for [u8; 19] {
 }
 
 impl RawSerialize for [u8; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 20], *const u8>(&(*self) as *const [u8; 20]), 20 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [u8; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 20], Error> {
@@ -366,10 +365,10 @@ impl RawDeserialize for [u8; 20] {
 }
 
 impl RawSerialize for [u8; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 21], *const u8>(&(*self) as *const [u8; 21]), 21 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(21)    }
 }
 impl RawDeserialize for [u8; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 21], Error> {
@@ -384,10 +383,10 @@ impl RawDeserialize for [u8; 21] {
 }
 
 impl RawSerialize for [u8; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 22], *const u8>(&(*self) as *const [u8; 22]), 22 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(22)    }
 }
 impl RawDeserialize for [u8; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 22], Error> {
@@ -402,10 +401,10 @@ impl RawDeserialize for [u8; 22] {
 }
 
 impl RawSerialize for [u8; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 23], *const u8>(&(*self) as *const [u8; 23]), 23 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(23)    }
 }
 impl RawDeserialize for [u8; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 23], Error> {
@@ -420,10 +419,10 @@ impl RawDeserialize for [u8; 23] {
 }
 
 impl RawSerialize for [u8; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 24], *const u8>(&(*self) as *const [u8; 24]), 24 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [u8; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 24], Error> {
@@ -438,10 +437,10 @@ impl RawDeserialize for [u8; 24] {
 }
 
 impl RawSerialize for [u8; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 25], *const u8>(&(*self) as *const [u8; 25]), 25 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(25)    }
 }
 impl RawDeserialize for [u8; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 25], Error> {
@@ -456,10 +455,10 @@ impl RawDeserialize for [u8; 25] {
 }
 
 impl RawSerialize for [u8; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 26], *const u8>(&(*self) as *const [u8; 26]), 26 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(26)    }
 }
 impl RawDeserialize for [u8; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 26], Error> {
@@ -474,10 +473,10 @@ impl RawDeserialize for [u8; 26] {
 }
 
 impl RawSerialize for [u8; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 27], *const u8>(&(*self) as *const [u8; 27]), 27 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(27)    }
 }
 impl RawDeserialize for [u8; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 27], Error> {
@@ -492,10 +491,10 @@ impl RawDeserialize for [u8; 27] {
 }
 
 impl RawSerialize for [u8; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 28], *const u8>(&(*self) as *const [u8; 28]), 28 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [u8; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 28], Error> {
@@ -510,10 +509,10 @@ impl RawDeserialize for [u8; 28] {
 }
 
 impl RawSerialize for [u8; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 29], *const u8>(&(*self) as *const [u8; 29]), 29 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(29)    }
 }
 impl RawDeserialize for [u8; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 29], Error> {
@@ -528,10 +527,10 @@ impl RawDeserialize for [u8; 29] {
 }
 
 impl RawSerialize for [u8; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 30], *const u8>(&(*self) as *const [u8; 30]), 30 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(30)    }
 }
 impl RawDeserialize for [u8; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 30], Error> {
@@ -546,10 +545,10 @@ impl RawDeserialize for [u8; 30] {
 }
 
 impl RawSerialize for [u8; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 31], *const u8>(&(*self) as *const [u8; 31]), 31 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(31)    }
 }
 impl RawDeserialize for [u8; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 31], Error> {
@@ -564,10 +563,10 @@ impl RawDeserialize for [u8; 31] {
 }
 
 impl RawSerialize for [u8; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u8; 32], *const u8>(&(*self) as *const [u8; 32]), 32 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [u8; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[u8; 32], Error> {
@@ -582,10 +581,10 @@ impl RawDeserialize for [u8; 32] {
 }
 
 impl RawSerialize for [i8; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 1], *const u8>(&(*self) as *const [i8; 1]), 1 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(1)    }
 }
 impl RawDeserialize for [i8; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 1], Error> {
@@ -600,10 +599,10 @@ impl RawDeserialize for [i8; 1] {
 }
 
 impl RawSerialize for [i8; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 2], *const u8>(&(*self) as *const [i8; 2]), 2 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(2)    }
 }
 impl RawDeserialize for [i8; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 2], Error> {
@@ -618,10 +617,10 @@ impl RawDeserialize for [i8; 2] {
 }
 
 impl RawSerialize for [i8; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 3], *const u8>(&(*self) as *const [i8; 3]), 3 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(3)    }
 }
 impl RawDeserialize for [i8; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 3], Error> {
@@ -636,10 +635,10 @@ impl RawDeserialize for [i8; 3] {
 }
 
 impl RawSerialize for [i8; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 4], *const u8>(&(*self) as *const [i8; 4]), 4 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [i8; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 4], Error> {
@@ -654,10 +653,10 @@ impl RawDeserialize for [i8; 4] {
 }
 
 impl RawSerialize for [i8; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 5], *const u8>(&(*self) as *const [i8; 5]), 5 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(5)    }
 }
 impl RawDeserialize for [i8; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 5], Error> {
@@ -672,10 +671,10 @@ impl RawDeserialize for [i8; 5] {
 }
 
 impl RawSerialize for [i8; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 6], *const u8>(&(*self) as *const [i8; 6]), 6 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(6)    }
 }
 impl RawDeserialize for [i8; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 6], Error> {
@@ -690,10 +689,10 @@ impl RawDeserialize for [i8; 6] {
 }
 
 impl RawSerialize for [i8; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 7], *const u8>(&(*self) as *const [i8; 7]), 7 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(7)    }
 }
 impl RawDeserialize for [i8; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 7], Error> {
@@ -708,10 +707,10 @@ impl RawDeserialize for [i8; 7] {
 }
 
 impl RawSerialize for [i8; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 8], *const u8>(&(*self) as *const [i8; 8]), 8 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [i8; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 8], Error> {
@@ -726,10 +725,10 @@ impl RawDeserialize for [i8; 8] {
 }
 
 impl RawSerialize for [i8; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 9], *const u8>(&(*self) as *const [i8; 9]), 9 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(9)    }
 }
 impl RawDeserialize for [i8; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 9], Error> {
@@ -744,10 +743,10 @@ impl RawDeserialize for [i8; 9] {
 }
 
 impl RawSerialize for [i8; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 10], *const u8>(&(*self) as *const [i8; 10]), 10 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(10)    }
 }
 impl RawDeserialize for [i8; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 10], Error> {
@@ -762,10 +761,10 @@ impl RawDeserialize for [i8; 10] {
 }
 
 impl RawSerialize for [i8; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 11], *const u8>(&(*self) as *const [i8; 11]), 11 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(11)    }
 }
 impl RawDeserialize for [i8; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 11], Error> {
@@ -780,10 +779,10 @@ impl RawDeserialize for [i8; 11] {
 }
 
 impl RawSerialize for [i8; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 12], *const u8>(&(*self) as *const [i8; 12]), 12 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [i8; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 12], Error> {
@@ -798,10 +797,10 @@ impl RawDeserialize for [i8; 12] {
 }
 
 impl RawSerialize for [i8; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 13], *const u8>(&(*self) as *const [i8; 13]), 13 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(13)    }
 }
 impl RawDeserialize for [i8; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 13], Error> {
@@ -816,10 +815,10 @@ impl RawDeserialize for [i8; 13] {
 }
 
 impl RawSerialize for [i8; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 14], *const u8>(&(*self) as *const [i8; 14]), 14 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(14)    }
 }
 impl RawDeserialize for [i8; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 14], Error> {
@@ -834,10 +833,10 @@ impl RawDeserialize for [i8; 14] {
 }
 
 impl RawSerialize for [i8; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 15], *const u8>(&(*self) as *const [i8; 15]), 15 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(15)    }
 }
 impl RawDeserialize for [i8; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 15], Error> {
@@ -852,10 +851,10 @@ impl RawDeserialize for [i8; 15] {
 }
 
 impl RawSerialize for [i8; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 16], *const u8>(&(*self) as *const [i8; 16]), 16 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [i8; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 16], Error> {
@@ -870,10 +869,10 @@ impl RawDeserialize for [i8; 16] {
 }
 
 impl RawSerialize for [i8; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 17], *const u8>(&(*self) as *const [i8; 17]), 17 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(17)    }
 }
 impl RawDeserialize for [i8; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 17], Error> {
@@ -888,10 +887,10 @@ impl RawDeserialize for [i8; 17] {
 }
 
 impl RawSerialize for [i8; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 18], *const u8>(&(*self) as *const [i8; 18]), 18 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(18)    }
 }
 impl RawDeserialize for [i8; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 18], Error> {
@@ -906,10 +905,10 @@ impl RawDeserialize for [i8; 18] {
 }
 
 impl RawSerialize for [i8; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 19], *const u8>(&(*self) as *const [i8; 19]), 19 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(19)    }
 }
 impl RawDeserialize for [i8; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 19], Error> {
@@ -924,10 +923,10 @@ impl RawDeserialize for [i8; 19] {
 }
 
 impl RawSerialize for [i8; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 20], *const u8>(&(*self) as *const [i8; 20]), 20 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [i8; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 20], Error> {
@@ -942,10 +941,10 @@ impl RawDeserialize for [i8; 20] {
 }
 
 impl RawSerialize for [i8; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 21], *const u8>(&(*self) as *const [i8; 21]), 21 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(21)    }
 }
 impl RawDeserialize for [i8; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 21], Error> {
@@ -960,10 +959,10 @@ impl RawDeserialize for [i8; 21] {
 }
 
 impl RawSerialize for [i8; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 22], *const u8>(&(*self) as *const [i8; 22]), 22 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(22)    }
 }
 impl RawDeserialize for [i8; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 22], Error> {
@@ -978,10 +977,10 @@ impl RawDeserialize for [i8; 22] {
 }
 
 impl RawSerialize for [i8; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 23], *const u8>(&(*self) as *const [i8; 23]), 23 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(23)    }
 }
 impl RawDeserialize for [i8; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 23], Error> {
@@ -996,10 +995,10 @@ impl RawDeserialize for [i8; 23] {
 }
 
 impl RawSerialize for [i8; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 24], *const u8>(&(*self) as *const [i8; 24]), 24 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [i8; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 24], Error> {
@@ -1014,10 +1013,10 @@ impl RawDeserialize for [i8; 24] {
 }
 
 impl RawSerialize for [i8; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 25], *const u8>(&(*self) as *const [i8; 25]), 25 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(25)    }
 }
 impl RawDeserialize for [i8; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 25], Error> {
@@ -1032,10 +1031,10 @@ impl RawDeserialize for [i8; 25] {
 }
 
 impl RawSerialize for [i8; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 26], *const u8>(&(*self) as *const [i8; 26]), 26 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(26)    }
 }
 impl RawDeserialize for [i8; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 26], Error> {
@@ -1050,10 +1049,10 @@ impl RawDeserialize for [i8; 26] {
 }
 
 impl RawSerialize for [i8; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 27], *const u8>(&(*self) as *const [i8; 27]), 27 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(27)    }
 }
 impl RawDeserialize for [i8; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 27], Error> {
@@ -1068,10 +1067,10 @@ impl RawDeserialize for [i8; 27] {
 }
 
 impl RawSerialize for [i8; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 28], *const u8>(&(*self) as *const [i8; 28]), 28 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [i8; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 28], Error> {
@@ -1086,10 +1085,10 @@ impl RawDeserialize for [i8; 28] {
 }
 
 impl RawSerialize for [i8; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 29], *const u8>(&(*self) as *const [i8; 29]), 29 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(29)    }
 }
 impl RawDeserialize for [i8; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 29], Error> {
@@ -1104,10 +1103,10 @@ impl RawDeserialize for [i8; 29] {
 }
 
 impl RawSerialize for [i8; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 30], *const u8>(&(*self) as *const [i8; 30]), 30 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(30)    }
 }
 impl RawDeserialize for [i8; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 30], Error> {
@@ -1122,10 +1121,10 @@ impl RawDeserialize for [i8; 30] {
 }
 
 impl RawSerialize for [i8; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 31], *const u8>(&(*self) as *const [i8; 31]), 31 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(31)    }
 }
 impl RawDeserialize for [i8; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 31], Error> {
@@ -1140,10 +1139,10 @@ impl RawDeserialize for [i8; 31] {
 }
 
 impl RawSerialize for [i8; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i8; 32], *const u8>(&(*self) as *const [i8; 32]), 32 * 1)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [i8; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[i8; 32], Error> {
@@ -1158,10 +1157,10 @@ impl RawDeserialize for [i8; 32] {
 }
 
 impl RawSerialize for [u16; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 1], *const u8>(&(*self) as *const [u16; 1]), 1 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(2)    }
 }
 impl RawDeserialize for [u16; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 1], Error> {
@@ -1176,10 +1175,10 @@ impl RawDeserialize for [u16; 1] {
 }
 
 impl RawSerialize for [u16; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 2], *const u8>(&(*self) as *const [u16; 2]), 2 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [u16; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 2], Error> {
@@ -1194,10 +1193,10 @@ impl RawDeserialize for [u16; 2] {
 }
 
 impl RawSerialize for [u16; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 3], *const u8>(&(*self) as *const [u16; 3]), 3 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(6)    }
 }
 impl RawDeserialize for [u16; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 3], Error> {
@@ -1212,10 +1211,10 @@ impl RawDeserialize for [u16; 3] {
 }
 
 impl RawSerialize for [u16; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 4], *const u8>(&(*self) as *const [u16; 4]), 4 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [u16; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 4], Error> {
@@ -1230,10 +1229,10 @@ impl RawDeserialize for [u16; 4] {
 }
 
 impl RawSerialize for [u16; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 5], *const u8>(&(*self) as *const [u16; 5]), 5 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(10)    }
 }
 impl RawDeserialize for [u16; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 5], Error> {
@@ -1248,10 +1247,10 @@ impl RawDeserialize for [u16; 5] {
 }
 
 impl RawSerialize for [u16; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 6], *const u8>(&(*self) as *const [u16; 6]), 6 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [u16; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 6], Error> {
@@ -1266,10 +1265,10 @@ impl RawDeserialize for [u16; 6] {
 }
 
 impl RawSerialize for [u16; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 7], *const u8>(&(*self) as *const [u16; 7]), 7 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(14)    }
 }
 impl RawDeserialize for [u16; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 7], Error> {
@@ -1284,10 +1283,10 @@ impl RawDeserialize for [u16; 7] {
 }
 
 impl RawSerialize for [u16; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 8], *const u8>(&(*self) as *const [u16; 8]), 8 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [u16; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 8], Error> {
@@ -1302,10 +1301,10 @@ impl RawDeserialize for [u16; 8] {
 }
 
 impl RawSerialize for [u16; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 9], *const u8>(&(*self) as *const [u16; 9]), 9 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(18)    }
 }
 impl RawDeserialize for [u16; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 9], Error> {
@@ -1320,10 +1319,10 @@ impl RawDeserialize for [u16; 9] {
 }
 
 impl RawSerialize for [u16; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 10], *const u8>(&(*self) as *const [u16; 10]), 10 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [u16; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 10], Error> {
@@ -1338,10 +1337,10 @@ impl RawDeserialize for [u16; 10] {
 }
 
 impl RawSerialize for [u16; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 11], *const u8>(&(*self) as *const [u16; 11]), 11 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(22)    }
 }
 impl RawDeserialize for [u16; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 11], Error> {
@@ -1356,10 +1355,10 @@ impl RawDeserialize for [u16; 11] {
 }
 
 impl RawSerialize for [u16; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 12], *const u8>(&(*self) as *const [u16; 12]), 12 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [u16; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 12], Error> {
@@ -1374,10 +1373,10 @@ impl RawDeserialize for [u16; 12] {
 }
 
 impl RawSerialize for [u16; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 13], *const u8>(&(*self) as *const [u16; 13]), 13 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(26)    }
 }
 impl RawDeserialize for [u16; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 13], Error> {
@@ -1392,10 +1391,10 @@ impl RawDeserialize for [u16; 13] {
 }
 
 impl RawSerialize for [u16; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 14], *const u8>(&(*self) as *const [u16; 14]), 14 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [u16; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 14], Error> {
@@ -1410,10 +1409,10 @@ impl RawDeserialize for [u16; 14] {
 }
 
 impl RawSerialize for [u16; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 15], *const u8>(&(*self) as *const [u16; 15]), 15 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(30)    }
 }
 impl RawDeserialize for [u16; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 15], Error> {
@@ -1428,10 +1427,10 @@ impl RawDeserialize for [u16; 15] {
 }
 
 impl RawSerialize for [u16; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 16], *const u8>(&(*self) as *const [u16; 16]), 16 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [u16; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 16], Error> {
@@ -1446,10 +1445,10 @@ impl RawDeserialize for [u16; 16] {
 }
 
 impl RawSerialize for [u16; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 17], *const u8>(&(*self) as *const [u16; 17]), 17 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(34)    }
 }
 impl RawDeserialize for [u16; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 17], Error> {
@@ -1464,10 +1463,10 @@ impl RawDeserialize for [u16; 17] {
 }
 
 impl RawSerialize for [u16; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 18], *const u8>(&(*self) as *const [u16; 18]), 18 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(36)    }
 }
 impl RawDeserialize for [u16; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 18], Error> {
@@ -1482,10 +1481,10 @@ impl RawDeserialize for [u16; 18] {
 }
 
 impl RawSerialize for [u16; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 19], *const u8>(&(*self) as *const [u16; 19]), 19 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(38)    }
 }
 impl RawDeserialize for [u16; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 19], Error> {
@@ -1500,10 +1499,10 @@ impl RawDeserialize for [u16; 19] {
 }
 
 impl RawSerialize for [u16; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 20], *const u8>(&(*self) as *const [u16; 20]), 20 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [u16; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 20], Error> {
@@ -1518,10 +1517,10 @@ impl RawDeserialize for [u16; 20] {
 }
 
 impl RawSerialize for [u16; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 21], *const u8>(&(*self) as *const [u16; 21]), 21 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(42)    }
 }
 impl RawDeserialize for [u16; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 21], Error> {
@@ -1536,10 +1535,10 @@ impl RawDeserialize for [u16; 21] {
 }
 
 impl RawSerialize for [u16; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 22], *const u8>(&(*self) as *const [u16; 22]), 22 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(44)    }
 }
 impl RawDeserialize for [u16; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 22], Error> {
@@ -1554,10 +1553,10 @@ impl RawDeserialize for [u16; 22] {
 }
 
 impl RawSerialize for [u16; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 23], *const u8>(&(*self) as *const [u16; 23]), 23 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(46)    }
 }
 impl RawDeserialize for [u16; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 23], Error> {
@@ -1572,10 +1571,10 @@ impl RawDeserialize for [u16; 23] {
 }
 
 impl RawSerialize for [u16; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 24], *const u8>(&(*self) as *const [u16; 24]), 24 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [u16; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 24], Error> {
@@ -1590,10 +1589,10 @@ impl RawDeserialize for [u16; 24] {
 }
 
 impl RawSerialize for [u16; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 25], *const u8>(&(*self) as *const [u16; 25]), 25 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(50)    }
 }
 impl RawDeserialize for [u16; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 25], Error> {
@@ -1608,10 +1607,10 @@ impl RawDeserialize for [u16; 25] {
 }
 
 impl RawSerialize for [u16; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 26], *const u8>(&(*self) as *const [u16; 26]), 26 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(52)    }
 }
 impl RawDeserialize for [u16; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 26], Error> {
@@ -1626,10 +1625,10 @@ impl RawDeserialize for [u16; 26] {
 }
 
 impl RawSerialize for [u16; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 27], *const u8>(&(*self) as *const [u16; 27]), 27 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(54)    }
 }
 impl RawDeserialize for [u16; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 27], Error> {
@@ -1644,10 +1643,10 @@ impl RawDeserialize for [u16; 27] {
 }
 
 impl RawSerialize for [u16; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 28], *const u8>(&(*self) as *const [u16; 28]), 28 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [u16; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 28], Error> {
@@ -1662,10 +1661,10 @@ impl RawDeserialize for [u16; 28] {
 }
 
 impl RawSerialize for [u16; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 29], *const u8>(&(*self) as *const [u16; 29]), 29 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(58)    }
 }
 impl RawDeserialize for [u16; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 29], Error> {
@@ -1680,10 +1679,10 @@ impl RawDeserialize for [u16; 29] {
 }
 
 impl RawSerialize for [u16; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 30], *const u8>(&(*self) as *const [u16; 30]), 30 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(60)    }
 }
 impl RawDeserialize for [u16; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 30], Error> {
@@ -1698,10 +1697,10 @@ impl RawDeserialize for [u16; 30] {
 }
 
 impl RawSerialize for [u16; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 31], *const u8>(&(*self) as *const [u16; 31]), 31 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(62)    }
 }
 impl RawDeserialize for [u16; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 31], Error> {
@@ -1716,10 +1715,10 @@ impl RawDeserialize for [u16; 31] {
 }
 
 impl RawSerialize for [u16; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u16; 32], *const u8>(&(*self) as *const [u16; 32]), 32 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [u16; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[u16; 32], Error> {
@@ -1734,10 +1733,10 @@ impl RawDeserialize for [u16; 32] {
 }
 
 impl RawSerialize for [i16; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 1], *const u8>(&(*self) as *const [i16; 1]), 1 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(2)    }
 }
 impl RawDeserialize for [i16; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 1], Error> {
@@ -1752,10 +1751,10 @@ impl RawDeserialize for [i16; 1] {
 }
 
 impl RawSerialize for [i16; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 2], *const u8>(&(*self) as *const [i16; 2]), 2 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [i16; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 2], Error> {
@@ -1770,10 +1769,10 @@ impl RawDeserialize for [i16; 2] {
 }
 
 impl RawSerialize for [i16; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 3], *const u8>(&(*self) as *const [i16; 3]), 3 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(6)    }
 }
 impl RawDeserialize for [i16; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 3], Error> {
@@ -1788,10 +1787,10 @@ impl RawDeserialize for [i16; 3] {
 }
 
 impl RawSerialize for [i16; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 4], *const u8>(&(*self) as *const [i16; 4]), 4 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [i16; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 4], Error> {
@@ -1806,10 +1805,10 @@ impl RawDeserialize for [i16; 4] {
 }
 
 impl RawSerialize for [i16; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 5], *const u8>(&(*self) as *const [i16; 5]), 5 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(10)    }
 }
 impl RawDeserialize for [i16; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 5], Error> {
@@ -1824,10 +1823,10 @@ impl RawDeserialize for [i16; 5] {
 }
 
 impl RawSerialize for [i16; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 6], *const u8>(&(*self) as *const [i16; 6]), 6 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [i16; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 6], Error> {
@@ -1842,10 +1841,10 @@ impl RawDeserialize for [i16; 6] {
 }
 
 impl RawSerialize for [i16; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 7], *const u8>(&(*self) as *const [i16; 7]), 7 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(14)    }
 }
 impl RawDeserialize for [i16; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 7], Error> {
@@ -1860,10 +1859,10 @@ impl RawDeserialize for [i16; 7] {
 }
 
 impl RawSerialize for [i16; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 8], *const u8>(&(*self) as *const [i16; 8]), 8 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [i16; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 8], Error> {
@@ -1878,10 +1877,10 @@ impl RawDeserialize for [i16; 8] {
 }
 
 impl RawSerialize for [i16; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 9], *const u8>(&(*self) as *const [i16; 9]), 9 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(18)    }
 }
 impl RawDeserialize for [i16; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 9], Error> {
@@ -1896,10 +1895,10 @@ impl RawDeserialize for [i16; 9] {
 }
 
 impl RawSerialize for [i16; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 10], *const u8>(&(*self) as *const [i16; 10]), 10 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [i16; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 10], Error> {
@@ -1914,10 +1913,10 @@ impl RawDeserialize for [i16; 10] {
 }
 
 impl RawSerialize for [i16; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 11], *const u8>(&(*self) as *const [i16; 11]), 11 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(22)    }
 }
 impl RawDeserialize for [i16; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 11], Error> {
@@ -1932,10 +1931,10 @@ impl RawDeserialize for [i16; 11] {
 }
 
 impl RawSerialize for [i16; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 12], *const u8>(&(*self) as *const [i16; 12]), 12 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [i16; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 12], Error> {
@@ -1950,10 +1949,10 @@ impl RawDeserialize for [i16; 12] {
 }
 
 impl RawSerialize for [i16; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 13], *const u8>(&(*self) as *const [i16; 13]), 13 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(26)    }
 }
 impl RawDeserialize for [i16; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 13], Error> {
@@ -1968,10 +1967,10 @@ impl RawDeserialize for [i16; 13] {
 }
 
 impl RawSerialize for [i16; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 14], *const u8>(&(*self) as *const [i16; 14]), 14 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [i16; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 14], Error> {
@@ -1986,10 +1985,10 @@ impl RawDeserialize for [i16; 14] {
 }
 
 impl RawSerialize for [i16; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 15], *const u8>(&(*self) as *const [i16; 15]), 15 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(30)    }
 }
 impl RawDeserialize for [i16; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 15], Error> {
@@ -2004,10 +2003,10 @@ impl RawDeserialize for [i16; 15] {
 }
 
 impl RawSerialize for [i16; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 16], *const u8>(&(*self) as *const [i16; 16]), 16 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [i16; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 16], Error> {
@@ -2022,10 +2021,10 @@ impl RawDeserialize for [i16; 16] {
 }
 
 impl RawSerialize for [i16; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 17], *const u8>(&(*self) as *const [i16; 17]), 17 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(34)    }
 }
 impl RawDeserialize for [i16; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 17], Error> {
@@ -2040,10 +2039,10 @@ impl RawDeserialize for [i16; 17] {
 }
 
 impl RawSerialize for [i16; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 18], *const u8>(&(*self) as *const [i16; 18]), 18 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(36)    }
 }
 impl RawDeserialize for [i16; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 18], Error> {
@@ -2058,10 +2057,10 @@ impl RawDeserialize for [i16; 18] {
 }
 
 impl RawSerialize for [i16; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 19], *const u8>(&(*self) as *const [i16; 19]), 19 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(38)    }
 }
 impl RawDeserialize for [i16; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 19], Error> {
@@ -2076,10 +2075,10 @@ impl RawDeserialize for [i16; 19] {
 }
 
 impl RawSerialize for [i16; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 20], *const u8>(&(*self) as *const [i16; 20]), 20 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [i16; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 20], Error> {
@@ -2094,10 +2093,10 @@ impl RawDeserialize for [i16; 20] {
 }
 
 impl RawSerialize for [i16; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 21], *const u8>(&(*self) as *const [i16; 21]), 21 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(42)    }
 }
 impl RawDeserialize for [i16; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 21], Error> {
@@ -2112,10 +2111,10 @@ impl RawDeserialize for [i16; 21] {
 }
 
 impl RawSerialize for [i16; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 22], *const u8>(&(*self) as *const [i16; 22]), 22 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(44)    }
 }
 impl RawDeserialize for [i16; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 22], Error> {
@@ -2130,10 +2129,10 @@ impl RawDeserialize for [i16; 22] {
 }
 
 impl RawSerialize for [i16; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 23], *const u8>(&(*self) as *const [i16; 23]), 23 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(46)    }
 }
 impl RawDeserialize for [i16; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 23], Error> {
@@ -2148,10 +2147,10 @@ impl RawDeserialize for [i16; 23] {
 }
 
 impl RawSerialize for [i16; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 24], *const u8>(&(*self) as *const [i16; 24]), 24 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [i16; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 24], Error> {
@@ -2166,10 +2165,10 @@ impl RawDeserialize for [i16; 24] {
 }
 
 impl RawSerialize for [i16; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 25], *const u8>(&(*self) as *const [i16; 25]), 25 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(50)    }
 }
 impl RawDeserialize for [i16; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 25], Error> {
@@ -2184,10 +2183,10 @@ impl RawDeserialize for [i16; 25] {
 }
 
 impl RawSerialize for [i16; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 26], *const u8>(&(*self) as *const [i16; 26]), 26 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(52)    }
 }
 impl RawDeserialize for [i16; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 26], Error> {
@@ -2202,10 +2201,10 @@ impl RawDeserialize for [i16; 26] {
 }
 
 impl RawSerialize for [i16; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 27], *const u8>(&(*self) as *const [i16; 27]), 27 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(54)    }
 }
 impl RawDeserialize for [i16; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 27], Error> {
@@ -2220,10 +2219,10 @@ impl RawDeserialize for [i16; 27] {
 }
 
 impl RawSerialize for [i16; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 28], *const u8>(&(*self) as *const [i16; 28]), 28 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [i16; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 28], Error> {
@@ -2238,10 +2237,10 @@ impl RawDeserialize for [i16; 28] {
 }
 
 impl RawSerialize for [i16; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 29], *const u8>(&(*self) as *const [i16; 29]), 29 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(58)    }
 }
 impl RawDeserialize for [i16; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 29], Error> {
@@ -2256,10 +2255,10 @@ impl RawDeserialize for [i16; 29] {
 }
 
 impl RawSerialize for [i16; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 30], *const u8>(&(*self) as *const [i16; 30]), 30 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(60)    }
 }
 impl RawDeserialize for [i16; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 30], Error> {
@@ -2274,10 +2273,10 @@ impl RawDeserialize for [i16; 30] {
 }
 
 impl RawSerialize for [i16; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 31], *const u8>(&(*self) as *const [i16; 31]), 31 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(62)    }
 }
 impl RawDeserialize for [i16; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 31], Error> {
@@ -2292,10 +2291,10 @@ impl RawDeserialize for [i16; 31] {
 }
 
 impl RawSerialize for [i16; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i16; 32], *const u8>(&(*self) as *const [i16; 32]), 32 * 2)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [i16; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[i16; 32], Error> {
@@ -2310,10 +2309,10 @@ impl RawDeserialize for [i16; 32] {
 }
 
 impl RawSerialize for [u32; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 1], *const u8>(&(*self) as *const [u32; 1]), 1 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [u32; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 1], Error> {
@@ -2328,10 +2327,10 @@ impl RawDeserialize for [u32; 1] {
 }
 
 impl RawSerialize for [u32; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 2], *const u8>(&(*self) as *const [u32; 2]), 2 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [u32; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 2], Error> {
@@ -2346,10 +2345,10 @@ impl RawDeserialize for [u32; 2] {
 }
 
 impl RawSerialize for [u32; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 3], *const u8>(&(*self) as *const [u32; 3]), 3 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [u32; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 3], Error> {
@@ -2364,10 +2363,10 @@ impl RawDeserialize for [u32; 3] {
 }
 
 impl RawSerialize for [u32; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 4], *const u8>(&(*self) as *const [u32; 4]), 4 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [u32; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 4], Error> {
@@ -2382,10 +2381,10 @@ impl RawDeserialize for [u32; 4] {
 }
 
 impl RawSerialize for [u32; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 5], *const u8>(&(*self) as *const [u32; 5]), 5 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [u32; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 5], Error> {
@@ -2400,10 +2399,10 @@ impl RawDeserialize for [u32; 5] {
 }
 
 impl RawSerialize for [u32; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 6], *const u8>(&(*self) as *const [u32; 6]), 6 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [u32; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 6], Error> {
@@ -2418,10 +2417,10 @@ impl RawDeserialize for [u32; 6] {
 }
 
 impl RawSerialize for [u32; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 7], *const u8>(&(*self) as *const [u32; 7]), 7 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [u32; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 7], Error> {
@@ -2436,10 +2435,10 @@ impl RawDeserialize for [u32; 7] {
 }
 
 impl RawSerialize for [u32; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 8], *const u8>(&(*self) as *const [u32; 8]), 8 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [u32; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 8], Error> {
@@ -2454,10 +2453,10 @@ impl RawDeserialize for [u32; 8] {
 }
 
 impl RawSerialize for [u32; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 9], *const u8>(&(*self) as *const [u32; 9]), 9 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(36)    }
 }
 impl RawDeserialize for [u32; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 9], Error> {
@@ -2472,10 +2471,10 @@ impl RawDeserialize for [u32; 9] {
 }
 
 impl RawSerialize for [u32; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 10], *const u8>(&(*self) as *const [u32; 10]), 10 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [u32; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 10], Error> {
@@ -2490,10 +2489,10 @@ impl RawDeserialize for [u32; 10] {
 }
 
 impl RawSerialize for [u32; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 11], *const u8>(&(*self) as *const [u32; 11]), 11 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(44)    }
 }
 impl RawDeserialize for [u32; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 11], Error> {
@@ -2508,10 +2507,10 @@ impl RawDeserialize for [u32; 11] {
 }
 
 impl RawSerialize for [u32; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 12], *const u8>(&(*self) as *const [u32; 12]), 12 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [u32; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 12], Error> {
@@ -2526,10 +2525,10 @@ impl RawDeserialize for [u32; 12] {
 }
 
 impl RawSerialize for [u32; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 13], *const u8>(&(*self) as *const [u32; 13]), 13 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(52)    }
 }
 impl RawDeserialize for [u32; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 13], Error> {
@@ -2544,10 +2543,10 @@ impl RawDeserialize for [u32; 13] {
 }
 
 impl RawSerialize for [u32; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 14], *const u8>(&(*self) as *const [u32; 14]), 14 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [u32; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 14], Error> {
@@ -2562,10 +2561,10 @@ impl RawDeserialize for [u32; 14] {
 }
 
 impl RawSerialize for [u32; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 15], *const u8>(&(*self) as *const [u32; 15]), 15 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(60)    }
 }
 impl RawDeserialize for [u32; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 15], Error> {
@@ -2580,10 +2579,10 @@ impl RawDeserialize for [u32; 15] {
 }
 
 impl RawSerialize for [u32; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 16], *const u8>(&(*self) as *const [u32; 16]), 16 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [u32; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 16], Error> {
@@ -2598,10 +2597,10 @@ impl RawDeserialize for [u32; 16] {
 }
 
 impl RawSerialize for [u32; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 17], *const u8>(&(*self) as *const [u32; 17]), 17 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(68)    }
 }
 impl RawDeserialize for [u32; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 17], Error> {
@@ -2616,10 +2615,10 @@ impl RawDeserialize for [u32; 17] {
 }
 
 impl RawSerialize for [u32; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 18], *const u8>(&(*self) as *const [u32; 18]), 18 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [u32; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 18], Error> {
@@ -2634,10 +2633,10 @@ impl RawDeserialize for [u32; 18] {
 }
 
 impl RawSerialize for [u32; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 19], *const u8>(&(*self) as *const [u32; 19]), 19 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(76)    }
 }
 impl RawDeserialize for [u32; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 19], Error> {
@@ -2652,10 +2651,10 @@ impl RawDeserialize for [u32; 19] {
 }
 
 impl RawSerialize for [u32; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 20], *const u8>(&(*self) as *const [u32; 20]), 20 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [u32; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 20], Error> {
@@ -2670,10 +2669,10 @@ impl RawDeserialize for [u32; 20] {
 }
 
 impl RawSerialize for [u32; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 21], *const u8>(&(*self) as *const [u32; 21]), 21 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(84)    }
 }
 impl RawDeserialize for [u32; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 21], Error> {
@@ -2688,10 +2687,10 @@ impl RawDeserialize for [u32; 21] {
 }
 
 impl RawSerialize for [u32; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 22], *const u8>(&(*self) as *const [u32; 22]), 22 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [u32; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 22], Error> {
@@ -2706,10 +2705,10 @@ impl RawDeserialize for [u32; 22] {
 }
 
 impl RawSerialize for [u32; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 23], *const u8>(&(*self) as *const [u32; 23]), 23 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(92)    }
 }
 impl RawDeserialize for [u32; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 23], Error> {
@@ -2724,10 +2723,10 @@ impl RawDeserialize for [u32; 23] {
 }
 
 impl RawSerialize for [u32; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 24], *const u8>(&(*self) as *const [u32; 24]), 24 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [u32; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 24], Error> {
@@ -2742,10 +2741,10 @@ impl RawDeserialize for [u32; 24] {
 }
 
 impl RawSerialize for [u32; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 25], *const u8>(&(*self) as *const [u32; 25]), 25 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(100)    }
 }
 impl RawDeserialize for [u32; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 25], Error> {
@@ -2760,10 +2759,10 @@ impl RawDeserialize for [u32; 25] {
 }
 
 impl RawSerialize for [u32; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 26], *const u8>(&(*self) as *const [u32; 26]), 26 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [u32; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 26], Error> {
@@ -2778,10 +2777,10 @@ impl RawDeserialize for [u32; 26] {
 }
 
 impl RawSerialize for [u32; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 27], *const u8>(&(*self) as *const [u32; 27]), 27 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(108)    }
 }
 impl RawDeserialize for [u32; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 27], Error> {
@@ -2796,10 +2795,10 @@ impl RawDeserialize for [u32; 27] {
 }
 
 impl RawSerialize for [u32; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 28], *const u8>(&(*self) as *const [u32; 28]), 28 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [u32; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 28], Error> {
@@ -2814,10 +2813,10 @@ impl RawDeserialize for [u32; 28] {
 }
 
 impl RawSerialize for [u32; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 29], *const u8>(&(*self) as *const [u32; 29]), 29 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(116)    }
 }
 impl RawDeserialize for [u32; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 29], Error> {
@@ -2832,10 +2831,10 @@ impl RawDeserialize for [u32; 29] {
 }
 
 impl RawSerialize for [u32; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 30], *const u8>(&(*self) as *const [u32; 30]), 30 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [u32; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 30], Error> {
@@ -2850,10 +2849,10 @@ impl RawDeserialize for [u32; 30] {
 }
 
 impl RawSerialize for [u32; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 31], *const u8>(&(*self) as *const [u32; 31]), 31 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(124)    }
 }
 impl RawDeserialize for [u32; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 31], Error> {
@@ -2868,10 +2867,10 @@ impl RawDeserialize for [u32; 31] {
 }
 
 impl RawSerialize for [u32; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u32; 32], *const u8>(&(*self) as *const [u32; 32]), 32 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [u32; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[u32; 32], Error> {
@@ -2886,10 +2885,10 @@ impl RawDeserialize for [u32; 32] {
 }
 
 impl RawSerialize for [i32; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 1], *const u8>(&(*self) as *const [i32; 1]), 1 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [i32; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 1], Error> {
@@ -2904,10 +2903,10 @@ impl RawDeserialize for [i32; 1] {
 }
 
 impl RawSerialize for [i32; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 2], *const u8>(&(*self) as *const [i32; 2]), 2 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [i32; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 2], Error> {
@@ -2922,10 +2921,10 @@ impl RawDeserialize for [i32; 2] {
 }
 
 impl RawSerialize for [i32; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 3], *const u8>(&(*self) as *const [i32; 3]), 3 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [i32; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 3], Error> {
@@ -2940,10 +2939,10 @@ impl RawDeserialize for [i32; 3] {
 }
 
 impl RawSerialize for [i32; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 4], *const u8>(&(*self) as *const [i32; 4]), 4 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [i32; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 4], Error> {
@@ -2958,10 +2957,10 @@ impl RawDeserialize for [i32; 4] {
 }
 
 impl RawSerialize for [i32; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 5], *const u8>(&(*self) as *const [i32; 5]), 5 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [i32; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 5], Error> {
@@ -2976,10 +2975,10 @@ impl RawDeserialize for [i32; 5] {
 }
 
 impl RawSerialize for [i32; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 6], *const u8>(&(*self) as *const [i32; 6]), 6 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [i32; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 6], Error> {
@@ -2994,10 +2993,10 @@ impl RawDeserialize for [i32; 6] {
 }
 
 impl RawSerialize for [i32; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 7], *const u8>(&(*self) as *const [i32; 7]), 7 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [i32; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 7], Error> {
@@ -3012,10 +3011,10 @@ impl RawDeserialize for [i32; 7] {
 }
 
 impl RawSerialize for [i32; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 8], *const u8>(&(*self) as *const [i32; 8]), 8 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [i32; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 8], Error> {
@@ -3030,10 +3029,10 @@ impl RawDeserialize for [i32; 8] {
 }
 
 impl RawSerialize for [i32; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 9], *const u8>(&(*self) as *const [i32; 9]), 9 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(36)    }
 }
 impl RawDeserialize for [i32; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 9], Error> {
@@ -3048,10 +3047,10 @@ impl RawDeserialize for [i32; 9] {
 }
 
 impl RawSerialize for [i32; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 10], *const u8>(&(*self) as *const [i32; 10]), 10 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [i32; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 10], Error> {
@@ -3066,10 +3065,10 @@ impl RawDeserialize for [i32; 10] {
 }
 
 impl RawSerialize for [i32; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 11], *const u8>(&(*self) as *const [i32; 11]), 11 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(44)    }
 }
 impl RawDeserialize for [i32; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 11], Error> {
@@ -3084,10 +3083,10 @@ impl RawDeserialize for [i32; 11] {
 }
 
 impl RawSerialize for [i32; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 12], *const u8>(&(*self) as *const [i32; 12]), 12 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [i32; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 12], Error> {
@@ -3102,10 +3101,10 @@ impl RawDeserialize for [i32; 12] {
 }
 
 impl RawSerialize for [i32; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 13], *const u8>(&(*self) as *const [i32; 13]), 13 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(52)    }
 }
 impl RawDeserialize for [i32; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 13], Error> {
@@ -3120,10 +3119,10 @@ impl RawDeserialize for [i32; 13] {
 }
 
 impl RawSerialize for [i32; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 14], *const u8>(&(*self) as *const [i32; 14]), 14 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [i32; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 14], Error> {
@@ -3138,10 +3137,10 @@ impl RawDeserialize for [i32; 14] {
 }
 
 impl RawSerialize for [i32; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 15], *const u8>(&(*self) as *const [i32; 15]), 15 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(60)    }
 }
 impl RawDeserialize for [i32; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 15], Error> {
@@ -3156,10 +3155,10 @@ impl RawDeserialize for [i32; 15] {
 }
 
 impl RawSerialize for [i32; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 16], *const u8>(&(*self) as *const [i32; 16]), 16 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [i32; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 16], Error> {
@@ -3174,10 +3173,10 @@ impl RawDeserialize for [i32; 16] {
 }
 
 impl RawSerialize for [i32; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 17], *const u8>(&(*self) as *const [i32; 17]), 17 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(68)    }
 }
 impl RawDeserialize for [i32; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 17], Error> {
@@ -3192,10 +3191,10 @@ impl RawDeserialize for [i32; 17] {
 }
 
 impl RawSerialize for [i32; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 18], *const u8>(&(*self) as *const [i32; 18]), 18 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [i32; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 18], Error> {
@@ -3210,10 +3209,10 @@ impl RawDeserialize for [i32; 18] {
 }
 
 impl RawSerialize for [i32; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 19], *const u8>(&(*self) as *const [i32; 19]), 19 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(76)    }
 }
 impl RawDeserialize for [i32; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 19], Error> {
@@ -3228,10 +3227,10 @@ impl RawDeserialize for [i32; 19] {
 }
 
 impl RawSerialize for [i32; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 20], *const u8>(&(*self) as *const [i32; 20]), 20 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [i32; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 20], Error> {
@@ -3246,10 +3245,10 @@ impl RawDeserialize for [i32; 20] {
 }
 
 impl RawSerialize for [i32; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 21], *const u8>(&(*self) as *const [i32; 21]), 21 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(84)    }
 }
 impl RawDeserialize for [i32; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 21], Error> {
@@ -3264,10 +3263,10 @@ impl RawDeserialize for [i32; 21] {
 }
 
 impl RawSerialize for [i32; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 22], *const u8>(&(*self) as *const [i32; 22]), 22 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [i32; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 22], Error> {
@@ -3282,10 +3281,10 @@ impl RawDeserialize for [i32; 22] {
 }
 
 impl RawSerialize for [i32; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 23], *const u8>(&(*self) as *const [i32; 23]), 23 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(92)    }
 }
 impl RawDeserialize for [i32; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 23], Error> {
@@ -3300,10 +3299,10 @@ impl RawDeserialize for [i32; 23] {
 }
 
 impl RawSerialize for [i32; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 24], *const u8>(&(*self) as *const [i32; 24]), 24 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [i32; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 24], Error> {
@@ -3318,10 +3317,10 @@ impl RawDeserialize for [i32; 24] {
 }
 
 impl RawSerialize for [i32; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 25], *const u8>(&(*self) as *const [i32; 25]), 25 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(100)    }
 }
 impl RawDeserialize for [i32; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 25], Error> {
@@ -3336,10 +3335,10 @@ impl RawDeserialize for [i32; 25] {
 }
 
 impl RawSerialize for [i32; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 26], *const u8>(&(*self) as *const [i32; 26]), 26 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [i32; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 26], Error> {
@@ -3354,10 +3353,10 @@ impl RawDeserialize for [i32; 26] {
 }
 
 impl RawSerialize for [i32; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 27], *const u8>(&(*self) as *const [i32; 27]), 27 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(108)    }
 }
 impl RawDeserialize for [i32; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 27], Error> {
@@ -3372,10 +3371,10 @@ impl RawDeserialize for [i32; 27] {
 }
 
 impl RawSerialize for [i32; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 28], *const u8>(&(*self) as *const [i32; 28]), 28 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [i32; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 28], Error> {
@@ -3390,10 +3389,10 @@ impl RawDeserialize for [i32; 28] {
 }
 
 impl RawSerialize for [i32; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 29], *const u8>(&(*self) as *const [i32; 29]), 29 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(116)    }
 }
 impl RawDeserialize for [i32; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 29], Error> {
@@ -3408,10 +3407,10 @@ impl RawDeserialize for [i32; 29] {
 }
 
 impl RawSerialize for [i32; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 30], *const u8>(&(*self) as *const [i32; 30]), 30 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [i32; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 30], Error> {
@@ -3426,10 +3425,10 @@ impl RawDeserialize for [i32; 30] {
 }
 
 impl RawSerialize for [i32; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 31], *const u8>(&(*self) as *const [i32; 31]), 31 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(124)    }
 }
 impl RawDeserialize for [i32; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 31], Error> {
@@ -3444,10 +3443,10 @@ impl RawDeserialize for [i32; 31] {
 }
 
 impl RawSerialize for [i32; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i32; 32], *const u8>(&(*self) as *const [i32; 32]), 32 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [i32; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[i32; 32], Error> {
@@ -3462,10 +3461,10 @@ impl RawDeserialize for [i32; 32] {
 }
 
 impl RawSerialize for [f32; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 1], *const u8>(&(*self) as *const [f32; 1]), 1 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(4)    }
 }
 impl RawDeserialize for [f32; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 1], Error> {
@@ -3480,10 +3479,10 @@ impl RawDeserialize for [f32; 1] {
 }
 
 impl RawSerialize for [f32; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 2], *const u8>(&(*self) as *const [f32; 2]), 2 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [f32; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 2], Error> {
@@ -3498,10 +3497,10 @@ impl RawDeserialize for [f32; 2] {
 }
 
 impl RawSerialize for [f32; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 3], *const u8>(&(*self) as *const [f32; 3]), 3 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(12)    }
 }
 impl RawDeserialize for [f32; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 3], Error> {
@@ -3516,10 +3515,10 @@ impl RawDeserialize for [f32; 3] {
 }
 
 impl RawSerialize for [f32; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 4], *const u8>(&(*self) as *const [f32; 4]), 4 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [f32; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 4], Error> {
@@ -3534,10 +3533,10 @@ impl RawDeserialize for [f32; 4] {
 }
 
 impl RawSerialize for [f32; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 5], *const u8>(&(*self) as *const [f32; 5]), 5 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(20)    }
 }
 impl RawDeserialize for [f32; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 5], Error> {
@@ -3552,10 +3551,10 @@ impl RawDeserialize for [f32; 5] {
 }
 
 impl RawSerialize for [f32; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 6], *const u8>(&(*self) as *const [f32; 6]), 6 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [f32; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 6], Error> {
@@ -3570,10 +3569,10 @@ impl RawDeserialize for [f32; 6] {
 }
 
 impl RawSerialize for [f32; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 7], *const u8>(&(*self) as *const [f32; 7]), 7 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(28)    }
 }
 impl RawDeserialize for [f32; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 7], Error> {
@@ -3588,10 +3587,10 @@ impl RawDeserialize for [f32; 7] {
 }
 
 impl RawSerialize for [f32; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 8], *const u8>(&(*self) as *const [f32; 8]), 8 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [f32; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 8], Error> {
@@ -3606,10 +3605,10 @@ impl RawDeserialize for [f32; 8] {
 }
 
 impl RawSerialize for [f32; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 9], *const u8>(&(*self) as *const [f32; 9]), 9 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(36)    }
 }
 impl RawDeserialize for [f32; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 9], Error> {
@@ -3624,10 +3623,10 @@ impl RawDeserialize for [f32; 9] {
 }
 
 impl RawSerialize for [f32; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 10], *const u8>(&(*self) as *const [f32; 10]), 10 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [f32; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 10], Error> {
@@ -3642,10 +3641,10 @@ impl RawDeserialize for [f32; 10] {
 }
 
 impl RawSerialize for [f32; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 11], *const u8>(&(*self) as *const [f32; 11]), 11 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(44)    }
 }
 impl RawDeserialize for [f32; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 11], Error> {
@@ -3660,10 +3659,10 @@ impl RawDeserialize for [f32; 11] {
 }
 
 impl RawSerialize for [f32; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 12], *const u8>(&(*self) as *const [f32; 12]), 12 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [f32; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 12], Error> {
@@ -3678,10 +3677,10 @@ impl RawDeserialize for [f32; 12] {
 }
 
 impl RawSerialize for [f32; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 13], *const u8>(&(*self) as *const [f32; 13]), 13 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(52)    }
 }
 impl RawDeserialize for [f32; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 13], Error> {
@@ -3696,10 +3695,10 @@ impl RawDeserialize for [f32; 13] {
 }
 
 impl RawSerialize for [f32; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 14], *const u8>(&(*self) as *const [f32; 14]), 14 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [f32; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 14], Error> {
@@ -3714,10 +3713,10 @@ impl RawDeserialize for [f32; 14] {
 }
 
 impl RawSerialize for [f32; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 15], *const u8>(&(*self) as *const [f32; 15]), 15 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(60)    }
 }
 impl RawDeserialize for [f32; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 15], Error> {
@@ -3732,10 +3731,10 @@ impl RawDeserialize for [f32; 15] {
 }
 
 impl RawSerialize for [f32; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 16], *const u8>(&(*self) as *const [f32; 16]), 16 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [f32; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 16], Error> {
@@ -3750,10 +3749,10 @@ impl RawDeserialize for [f32; 16] {
 }
 
 impl RawSerialize for [f32; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 17], *const u8>(&(*self) as *const [f32; 17]), 17 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(68)    }
 }
 impl RawDeserialize for [f32; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 17], Error> {
@@ -3768,10 +3767,10 @@ impl RawDeserialize for [f32; 17] {
 }
 
 impl RawSerialize for [f32; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 18], *const u8>(&(*self) as *const [f32; 18]), 18 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [f32; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 18], Error> {
@@ -3786,10 +3785,10 @@ impl RawDeserialize for [f32; 18] {
 }
 
 impl RawSerialize for [f32; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 19], *const u8>(&(*self) as *const [f32; 19]), 19 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(76)    }
 }
 impl RawDeserialize for [f32; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 19], Error> {
@@ -3804,10 +3803,10 @@ impl RawDeserialize for [f32; 19] {
 }
 
 impl RawSerialize for [f32; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 20], *const u8>(&(*self) as *const [f32; 20]), 20 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [f32; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 20], Error> {
@@ -3822,10 +3821,10 @@ impl RawDeserialize for [f32; 20] {
 }
 
 impl RawSerialize for [f32; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 21], *const u8>(&(*self) as *const [f32; 21]), 21 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(84)    }
 }
 impl RawDeserialize for [f32; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 21], Error> {
@@ -3840,10 +3839,10 @@ impl RawDeserialize for [f32; 21] {
 }
 
 impl RawSerialize for [f32; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 22], *const u8>(&(*self) as *const [f32; 22]), 22 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [f32; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 22], Error> {
@@ -3858,10 +3857,10 @@ impl RawDeserialize for [f32; 22] {
 }
 
 impl RawSerialize for [f32; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 23], *const u8>(&(*self) as *const [f32; 23]), 23 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(92)    }
 }
 impl RawDeserialize for [f32; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 23], Error> {
@@ -3876,10 +3875,10 @@ impl RawDeserialize for [f32; 23] {
 }
 
 impl RawSerialize for [f32; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 24], *const u8>(&(*self) as *const [f32; 24]), 24 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [f32; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 24], Error> {
@@ -3894,10 +3893,10 @@ impl RawDeserialize for [f32; 24] {
 }
 
 impl RawSerialize for [f32; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 25], *const u8>(&(*self) as *const [f32; 25]), 25 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(100)    }
 }
 impl RawDeserialize for [f32; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 25], Error> {
@@ -3912,10 +3911,10 @@ impl RawDeserialize for [f32; 25] {
 }
 
 impl RawSerialize for [f32; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 26], *const u8>(&(*self) as *const [f32; 26]), 26 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [f32; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 26], Error> {
@@ -3930,10 +3929,10 @@ impl RawDeserialize for [f32; 26] {
 }
 
 impl RawSerialize for [f32; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 27], *const u8>(&(*self) as *const [f32; 27]), 27 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(108)    }
 }
 impl RawDeserialize for [f32; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 27], Error> {
@@ -3948,10 +3947,10 @@ impl RawDeserialize for [f32; 27] {
 }
 
 impl RawSerialize for [f32; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 28], *const u8>(&(*self) as *const [f32; 28]), 28 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [f32; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 28], Error> {
@@ -3966,10 +3965,10 @@ impl RawDeserialize for [f32; 28] {
 }
 
 impl RawSerialize for [f32; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 29], *const u8>(&(*self) as *const [f32; 29]), 29 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(116)    }
 }
 impl RawDeserialize for [f32; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 29], Error> {
@@ -3984,10 +3983,10 @@ impl RawDeserialize for [f32; 29] {
 }
 
 impl RawSerialize for [f32; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 30], *const u8>(&(*self) as *const [f32; 30]), 30 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [f32; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 30], Error> {
@@ -4002,10 +4001,10 @@ impl RawDeserialize for [f32; 30] {
 }
 
 impl RawSerialize for [f32; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 31], *const u8>(&(*self) as *const [f32; 31]), 31 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(124)    }
 }
 impl RawDeserialize for [f32; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 31], Error> {
@@ -4020,10 +4019,10 @@ impl RawDeserialize for [f32; 31] {
 }
 
 impl RawSerialize for [f32; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f32; 32], *const u8>(&(*self) as *const [f32; 32]), 32 * 4)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [f32; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[f32; 32], Error> {
@@ -4038,10 +4037,10 @@ impl RawDeserialize for [f32; 32] {
 }
 
 impl RawSerialize for [u64; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 1], *const u8>(&(*self) as *const [u64; 1]), 1 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [u64; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 1], Error> {
@@ -4056,10 +4055,10 @@ impl RawDeserialize for [u64; 1] {
 }
 
 impl RawSerialize for [u64; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 2], *const u8>(&(*self) as *const [u64; 2]), 2 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [u64; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 2], Error> {
@@ -4074,10 +4073,10 @@ impl RawDeserialize for [u64; 2] {
 }
 
 impl RawSerialize for [u64; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 3], *const u8>(&(*self) as *const [u64; 3]), 3 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [u64; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 3], Error> {
@@ -4092,10 +4091,10 @@ impl RawDeserialize for [u64; 3] {
 }
 
 impl RawSerialize for [u64; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 4], *const u8>(&(*self) as *const [u64; 4]), 4 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [u64; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 4], Error> {
@@ -4110,10 +4109,10 @@ impl RawDeserialize for [u64; 4] {
 }
 
 impl RawSerialize for [u64; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 5], *const u8>(&(*self) as *const [u64; 5]), 5 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [u64; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 5], Error> {
@@ -4128,10 +4127,10 @@ impl RawDeserialize for [u64; 5] {
 }
 
 impl RawSerialize for [u64; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 6], *const u8>(&(*self) as *const [u64; 6]), 6 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [u64; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 6], Error> {
@@ -4146,10 +4145,10 @@ impl RawDeserialize for [u64; 6] {
 }
 
 impl RawSerialize for [u64; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 7], *const u8>(&(*self) as *const [u64; 7]), 7 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [u64; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 7], Error> {
@@ -4164,10 +4163,10 @@ impl RawDeserialize for [u64; 7] {
 }
 
 impl RawSerialize for [u64; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 8], *const u8>(&(*self) as *const [u64; 8]), 8 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [u64; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 8], Error> {
@@ -4182,10 +4181,10 @@ impl RawDeserialize for [u64; 8] {
 }
 
 impl RawSerialize for [u64; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 9], *const u8>(&(*self) as *const [u64; 9]), 9 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [u64; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 9], Error> {
@@ -4200,10 +4199,10 @@ impl RawDeserialize for [u64; 9] {
 }
 
 impl RawSerialize for [u64; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 10], *const u8>(&(*self) as *const [u64; 10]), 10 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [u64; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 10], Error> {
@@ -4218,10 +4217,10 @@ impl RawDeserialize for [u64; 10] {
 }
 
 impl RawSerialize for [u64; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 11], *const u8>(&(*self) as *const [u64; 11]), 11 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [u64; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 11], Error> {
@@ -4236,10 +4235,10 @@ impl RawDeserialize for [u64; 11] {
 }
 
 impl RawSerialize for [u64; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 12], *const u8>(&(*self) as *const [u64; 12]), 12 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [u64; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 12], Error> {
@@ -4254,10 +4253,10 @@ impl RawDeserialize for [u64; 12] {
 }
 
 impl RawSerialize for [u64; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 13], *const u8>(&(*self) as *const [u64; 13]), 13 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [u64; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 13], Error> {
@@ -4272,10 +4271,10 @@ impl RawDeserialize for [u64; 13] {
 }
 
 impl RawSerialize for [u64; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 14], *const u8>(&(*self) as *const [u64; 14]), 14 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [u64; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 14], Error> {
@@ -4290,10 +4289,10 @@ impl RawDeserialize for [u64; 14] {
 }
 
 impl RawSerialize for [u64; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 15], *const u8>(&(*self) as *const [u64; 15]), 15 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [u64; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 15], Error> {
@@ -4308,10 +4307,10 @@ impl RawDeserialize for [u64; 15] {
 }
 
 impl RawSerialize for [u64; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 16], *const u8>(&(*self) as *const [u64; 16]), 16 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [u64; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 16], Error> {
@@ -4326,10 +4325,10 @@ impl RawDeserialize for [u64; 16] {
 }
 
 impl RawSerialize for [u64; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 17], *const u8>(&(*self) as *const [u64; 17]), 17 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(136)    }
 }
 impl RawDeserialize for [u64; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 17], Error> {
@@ -4344,10 +4343,10 @@ impl RawDeserialize for [u64; 17] {
 }
 
 impl RawSerialize for [u64; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 18], *const u8>(&(*self) as *const [u64; 18]), 18 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(144)    }
 }
 impl RawDeserialize for [u64; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 18], Error> {
@@ -4362,10 +4361,10 @@ impl RawDeserialize for [u64; 18] {
 }
 
 impl RawSerialize for [u64; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 19], *const u8>(&(*self) as *const [u64; 19]), 19 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(152)    }
 }
 impl RawDeserialize for [u64; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 19], Error> {
@@ -4380,10 +4379,10 @@ impl RawDeserialize for [u64; 19] {
 }
 
 impl RawSerialize for [u64; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 20], *const u8>(&(*self) as *const [u64; 20]), 20 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(160)    }
 }
 impl RawDeserialize for [u64; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 20], Error> {
@@ -4398,10 +4397,10 @@ impl RawDeserialize for [u64; 20] {
 }
 
 impl RawSerialize for [u64; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 21], *const u8>(&(*self) as *const [u64; 21]), 21 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(168)    }
 }
 impl RawDeserialize for [u64; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 21], Error> {
@@ -4416,10 +4415,10 @@ impl RawDeserialize for [u64; 21] {
 }
 
 impl RawSerialize for [u64; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 22], *const u8>(&(*self) as *const [u64; 22]), 22 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(176)    }
 }
 impl RawDeserialize for [u64; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 22], Error> {
@@ -4434,10 +4433,10 @@ impl RawDeserialize for [u64; 22] {
 }
 
 impl RawSerialize for [u64; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 23], *const u8>(&(*self) as *const [u64; 23]), 23 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(184)    }
 }
 impl RawDeserialize for [u64; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 23], Error> {
@@ -4452,10 +4451,10 @@ impl RawDeserialize for [u64; 23] {
 }
 
 impl RawSerialize for [u64; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 24], *const u8>(&(*self) as *const [u64; 24]), 24 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(192)    }
 }
 impl RawDeserialize for [u64; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 24], Error> {
@@ -4470,10 +4469,10 @@ impl RawDeserialize for [u64; 24] {
 }
 
 impl RawSerialize for [u64; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 25], *const u8>(&(*self) as *const [u64; 25]), 25 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(200)    }
 }
 impl RawDeserialize for [u64; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 25], Error> {
@@ -4488,10 +4487,10 @@ impl RawDeserialize for [u64; 25] {
 }
 
 impl RawSerialize for [u64; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 26], *const u8>(&(*self) as *const [u64; 26]), 26 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(208)    }
 }
 impl RawDeserialize for [u64; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 26], Error> {
@@ -4506,10 +4505,10 @@ impl RawDeserialize for [u64; 26] {
 }
 
 impl RawSerialize for [u64; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 27], *const u8>(&(*self) as *const [u64; 27]), 27 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(216)    }
 }
 impl RawDeserialize for [u64; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 27], Error> {
@@ -4524,10 +4523,10 @@ impl RawDeserialize for [u64; 27] {
 }
 
 impl RawSerialize for [u64; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 28], *const u8>(&(*self) as *const [u64; 28]), 28 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(224)    }
 }
 impl RawDeserialize for [u64; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 28], Error> {
@@ -4542,10 +4541,10 @@ impl RawDeserialize for [u64; 28] {
 }
 
 impl RawSerialize for [u64; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 29], *const u8>(&(*self) as *const [u64; 29]), 29 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(232)    }
 }
 impl RawDeserialize for [u64; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 29], Error> {
@@ -4560,10 +4559,10 @@ impl RawDeserialize for [u64; 29] {
 }
 
 impl RawSerialize for [u64; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 30], *const u8>(&(*self) as *const [u64; 30]), 30 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(240)    }
 }
 impl RawDeserialize for [u64; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 30], Error> {
@@ -4578,10 +4577,10 @@ impl RawDeserialize for [u64; 30] {
 }
 
 impl RawSerialize for [u64; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 31], *const u8>(&(*self) as *const [u64; 31]), 31 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(248)    }
 }
 impl RawDeserialize for [u64; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 31], Error> {
@@ -4596,10 +4595,10 @@ impl RawDeserialize for [u64; 31] {
 }
 
 impl RawSerialize for [u64; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u64; 32], *const u8>(&(*self) as *const [u64; 32]), 32 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(256)    }
 }
 impl RawDeserialize for [u64; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[u64; 32], Error> {
@@ -4614,10 +4613,10 @@ impl RawDeserialize for [u64; 32] {
 }
 
 impl RawSerialize for [i64; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 1], *const u8>(&(*self) as *const [i64; 1]), 1 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [i64; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 1], Error> {
@@ -4632,10 +4631,10 @@ impl RawDeserialize for [i64; 1] {
 }
 
 impl RawSerialize for [i64; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 2], *const u8>(&(*self) as *const [i64; 2]), 2 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [i64; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 2], Error> {
@@ -4650,10 +4649,10 @@ impl RawDeserialize for [i64; 2] {
 }
 
 impl RawSerialize for [i64; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 3], *const u8>(&(*self) as *const [i64; 3]), 3 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [i64; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 3], Error> {
@@ -4668,10 +4667,10 @@ impl RawDeserialize for [i64; 3] {
 }
 
 impl RawSerialize for [i64; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 4], *const u8>(&(*self) as *const [i64; 4]), 4 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [i64; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 4], Error> {
@@ -4686,10 +4685,10 @@ impl RawDeserialize for [i64; 4] {
 }
 
 impl RawSerialize for [i64; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 5], *const u8>(&(*self) as *const [i64; 5]), 5 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [i64; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 5], Error> {
@@ -4704,10 +4703,10 @@ impl RawDeserialize for [i64; 5] {
 }
 
 impl RawSerialize for [i64; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 6], *const u8>(&(*self) as *const [i64; 6]), 6 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [i64; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 6], Error> {
@@ -4722,10 +4721,10 @@ impl RawDeserialize for [i64; 6] {
 }
 
 impl RawSerialize for [i64; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 7], *const u8>(&(*self) as *const [i64; 7]), 7 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [i64; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 7], Error> {
@@ -4740,10 +4739,10 @@ impl RawDeserialize for [i64; 7] {
 }
 
 impl RawSerialize for [i64; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 8], *const u8>(&(*self) as *const [i64; 8]), 8 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [i64; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 8], Error> {
@@ -4758,10 +4757,10 @@ impl RawDeserialize for [i64; 8] {
 }
 
 impl RawSerialize for [i64; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 9], *const u8>(&(*self) as *const [i64; 9]), 9 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [i64; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 9], Error> {
@@ -4776,10 +4775,10 @@ impl RawDeserialize for [i64; 9] {
 }
 
 impl RawSerialize for [i64; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 10], *const u8>(&(*self) as *const [i64; 10]), 10 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [i64; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 10], Error> {
@@ -4794,10 +4793,10 @@ impl RawDeserialize for [i64; 10] {
 }
 
 impl RawSerialize for [i64; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 11], *const u8>(&(*self) as *const [i64; 11]), 11 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [i64; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 11], Error> {
@@ -4812,10 +4811,10 @@ impl RawDeserialize for [i64; 11] {
 }
 
 impl RawSerialize for [i64; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 12], *const u8>(&(*self) as *const [i64; 12]), 12 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [i64; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 12], Error> {
@@ -4830,10 +4829,10 @@ impl RawDeserialize for [i64; 12] {
 }
 
 impl RawSerialize for [i64; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 13], *const u8>(&(*self) as *const [i64; 13]), 13 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [i64; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 13], Error> {
@@ -4848,10 +4847,10 @@ impl RawDeserialize for [i64; 13] {
 }
 
 impl RawSerialize for [i64; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 14], *const u8>(&(*self) as *const [i64; 14]), 14 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [i64; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 14], Error> {
@@ -4866,10 +4865,10 @@ impl RawDeserialize for [i64; 14] {
 }
 
 impl RawSerialize for [i64; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 15], *const u8>(&(*self) as *const [i64; 15]), 15 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [i64; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 15], Error> {
@@ -4884,10 +4883,10 @@ impl RawDeserialize for [i64; 15] {
 }
 
 impl RawSerialize for [i64; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 16], *const u8>(&(*self) as *const [i64; 16]), 16 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [i64; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 16], Error> {
@@ -4902,10 +4901,10 @@ impl RawDeserialize for [i64; 16] {
 }
 
 impl RawSerialize for [i64; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 17], *const u8>(&(*self) as *const [i64; 17]), 17 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(136)    }
 }
 impl RawDeserialize for [i64; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 17], Error> {
@@ -4920,10 +4919,10 @@ impl RawDeserialize for [i64; 17] {
 }
 
 impl RawSerialize for [i64; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 18], *const u8>(&(*self) as *const [i64; 18]), 18 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(144)    }
 }
 impl RawDeserialize for [i64; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 18], Error> {
@@ -4938,10 +4937,10 @@ impl RawDeserialize for [i64; 18] {
 }
 
 impl RawSerialize for [i64; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 19], *const u8>(&(*self) as *const [i64; 19]), 19 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(152)    }
 }
 impl RawDeserialize for [i64; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 19], Error> {
@@ -4956,10 +4955,10 @@ impl RawDeserialize for [i64; 19] {
 }
 
 impl RawSerialize for [i64; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 20], *const u8>(&(*self) as *const [i64; 20]), 20 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(160)    }
 }
 impl RawDeserialize for [i64; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 20], Error> {
@@ -4974,10 +4973,10 @@ impl RawDeserialize for [i64; 20] {
 }
 
 impl RawSerialize for [i64; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 21], *const u8>(&(*self) as *const [i64; 21]), 21 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(168)    }
 }
 impl RawDeserialize for [i64; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 21], Error> {
@@ -4992,10 +4991,10 @@ impl RawDeserialize for [i64; 21] {
 }
 
 impl RawSerialize for [i64; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 22], *const u8>(&(*self) as *const [i64; 22]), 22 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(176)    }
 }
 impl RawDeserialize for [i64; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 22], Error> {
@@ -5010,10 +5009,10 @@ impl RawDeserialize for [i64; 22] {
 }
 
 impl RawSerialize for [i64; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 23], *const u8>(&(*self) as *const [i64; 23]), 23 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(184)    }
 }
 impl RawDeserialize for [i64; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 23], Error> {
@@ -5028,10 +5027,10 @@ impl RawDeserialize for [i64; 23] {
 }
 
 impl RawSerialize for [i64; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 24], *const u8>(&(*self) as *const [i64; 24]), 24 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(192)    }
 }
 impl RawDeserialize for [i64; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 24], Error> {
@@ -5046,10 +5045,10 @@ impl RawDeserialize for [i64; 24] {
 }
 
 impl RawSerialize for [i64; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 25], *const u8>(&(*self) as *const [i64; 25]), 25 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(200)    }
 }
 impl RawDeserialize for [i64; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 25], Error> {
@@ -5064,10 +5063,10 @@ impl RawDeserialize for [i64; 25] {
 }
 
 impl RawSerialize for [i64; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 26], *const u8>(&(*self) as *const [i64; 26]), 26 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(208)    }
 }
 impl RawDeserialize for [i64; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 26], Error> {
@@ -5082,10 +5081,10 @@ impl RawDeserialize for [i64; 26] {
 }
 
 impl RawSerialize for [i64; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 27], *const u8>(&(*self) as *const [i64; 27]), 27 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(216)    }
 }
 impl RawDeserialize for [i64; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 27], Error> {
@@ -5100,10 +5099,10 @@ impl RawDeserialize for [i64; 27] {
 }
 
 impl RawSerialize for [i64; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 28], *const u8>(&(*self) as *const [i64; 28]), 28 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(224)    }
 }
 impl RawDeserialize for [i64; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 28], Error> {
@@ -5118,10 +5117,10 @@ impl RawDeserialize for [i64; 28] {
 }
 
 impl RawSerialize for [i64; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 29], *const u8>(&(*self) as *const [i64; 29]), 29 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(232)    }
 }
 impl RawDeserialize for [i64; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 29], Error> {
@@ -5136,10 +5135,10 @@ impl RawDeserialize for [i64; 29] {
 }
 
 impl RawSerialize for [i64; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 30], *const u8>(&(*self) as *const [i64; 30]), 30 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(240)    }
 }
 impl RawDeserialize for [i64; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 30], Error> {
@@ -5154,10 +5153,10 @@ impl RawDeserialize for [i64; 30] {
 }
 
 impl RawSerialize for [i64; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 31], *const u8>(&(*self) as *const [i64; 31]), 31 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(248)    }
 }
 impl RawDeserialize for [i64; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 31], Error> {
@@ -5172,10 +5171,10 @@ impl RawDeserialize for [i64; 31] {
 }
 
 impl RawSerialize for [i64; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i64; 32], *const u8>(&(*self) as *const [i64; 32]), 32 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(256)    }
 }
 impl RawDeserialize for [i64; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[i64; 32], Error> {
@@ -5190,10 +5189,10 @@ impl RawDeserialize for [i64; 32] {
 }
 
 impl RawSerialize for [f64; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 1], *const u8>(&(*self) as *const [f64; 1]), 1 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [f64; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 1], Error> {
@@ -5208,10 +5207,10 @@ impl RawDeserialize for [f64; 1] {
 }
 
 impl RawSerialize for [f64; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 2], *const u8>(&(*self) as *const [f64; 2]), 2 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [f64; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 2], Error> {
@@ -5226,10 +5225,10 @@ impl RawDeserialize for [f64; 2] {
 }
 
 impl RawSerialize for [f64; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 3], *const u8>(&(*self) as *const [f64; 3]), 3 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [f64; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 3], Error> {
@@ -5244,10 +5243,10 @@ impl RawDeserialize for [f64; 3] {
 }
 
 impl RawSerialize for [f64; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 4], *const u8>(&(*self) as *const [f64; 4]), 4 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [f64; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 4], Error> {
@@ -5262,10 +5261,10 @@ impl RawDeserialize for [f64; 4] {
 }
 
 impl RawSerialize for [f64; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 5], *const u8>(&(*self) as *const [f64; 5]), 5 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [f64; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 5], Error> {
@@ -5280,10 +5279,10 @@ impl RawDeserialize for [f64; 5] {
 }
 
 impl RawSerialize for [f64; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 6], *const u8>(&(*self) as *const [f64; 6]), 6 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [f64; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 6], Error> {
@@ -5298,10 +5297,10 @@ impl RawDeserialize for [f64; 6] {
 }
 
 impl RawSerialize for [f64; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 7], *const u8>(&(*self) as *const [f64; 7]), 7 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [f64; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 7], Error> {
@@ -5316,10 +5315,10 @@ impl RawDeserialize for [f64; 7] {
 }
 
 impl RawSerialize for [f64; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 8], *const u8>(&(*self) as *const [f64; 8]), 8 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [f64; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 8], Error> {
@@ -5334,10 +5333,10 @@ impl RawDeserialize for [f64; 8] {
 }
 
 impl RawSerialize for [f64; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 9], *const u8>(&(*self) as *const [f64; 9]), 9 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [f64; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 9], Error> {
@@ -5352,10 +5351,10 @@ impl RawDeserialize for [f64; 9] {
 }
 
 impl RawSerialize for [f64; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 10], *const u8>(&(*self) as *const [f64; 10]), 10 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [f64; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 10], Error> {
@@ -5370,10 +5369,10 @@ impl RawDeserialize for [f64; 10] {
 }
 
 impl RawSerialize for [f64; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 11], *const u8>(&(*self) as *const [f64; 11]), 11 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [f64; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 11], Error> {
@@ -5388,10 +5387,10 @@ impl RawDeserialize for [f64; 11] {
 }
 
 impl RawSerialize for [f64; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 12], *const u8>(&(*self) as *const [f64; 12]), 12 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [f64; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 12], Error> {
@@ -5406,10 +5405,10 @@ impl RawDeserialize for [f64; 12] {
 }
 
 impl RawSerialize for [f64; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 13], *const u8>(&(*self) as *const [f64; 13]), 13 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [f64; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 13], Error> {
@@ -5424,10 +5423,10 @@ impl RawDeserialize for [f64; 13] {
 }
 
 impl RawSerialize for [f64; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 14], *const u8>(&(*self) as *const [f64; 14]), 14 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [f64; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 14], Error> {
@@ -5442,10 +5441,10 @@ impl RawDeserialize for [f64; 14] {
 }
 
 impl RawSerialize for [f64; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 15], *const u8>(&(*self) as *const [f64; 15]), 15 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [f64; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 15], Error> {
@@ -5460,10 +5459,10 @@ impl RawDeserialize for [f64; 15] {
 }
 
 impl RawSerialize for [f64; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 16], *const u8>(&(*self) as *const [f64; 16]), 16 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [f64; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 16], Error> {
@@ -5478,10 +5477,10 @@ impl RawDeserialize for [f64; 16] {
 }
 
 impl RawSerialize for [f64; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 17], *const u8>(&(*self) as *const [f64; 17]), 17 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(136)    }
 }
 impl RawDeserialize for [f64; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 17], Error> {
@@ -5496,10 +5495,10 @@ impl RawDeserialize for [f64; 17] {
 }
 
 impl RawSerialize for [f64; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 18], *const u8>(&(*self) as *const [f64; 18]), 18 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(144)    }
 }
 impl RawDeserialize for [f64; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 18], Error> {
@@ -5514,10 +5513,10 @@ impl RawDeserialize for [f64; 18] {
 }
 
 impl RawSerialize for [f64; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 19], *const u8>(&(*self) as *const [f64; 19]), 19 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(152)    }
 }
 impl RawDeserialize for [f64; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 19], Error> {
@@ -5532,10 +5531,10 @@ impl RawDeserialize for [f64; 19] {
 }
 
 impl RawSerialize for [f64; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 20], *const u8>(&(*self) as *const [f64; 20]), 20 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(160)    }
 }
 impl RawDeserialize for [f64; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 20], Error> {
@@ -5550,10 +5549,10 @@ impl RawDeserialize for [f64; 20] {
 }
 
 impl RawSerialize for [f64; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 21], *const u8>(&(*self) as *const [f64; 21]), 21 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(168)    }
 }
 impl RawDeserialize for [f64; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 21], Error> {
@@ -5568,10 +5567,10 @@ impl RawDeserialize for [f64; 21] {
 }
 
 impl RawSerialize for [f64; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 22], *const u8>(&(*self) as *const [f64; 22]), 22 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(176)    }
 }
 impl RawDeserialize for [f64; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 22], Error> {
@@ -5586,10 +5585,10 @@ impl RawDeserialize for [f64; 22] {
 }
 
 impl RawSerialize for [f64; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 23], *const u8>(&(*self) as *const [f64; 23]), 23 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(184)    }
 }
 impl RawDeserialize for [f64; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 23], Error> {
@@ -5604,10 +5603,10 @@ impl RawDeserialize for [f64; 23] {
 }
 
 impl RawSerialize for [f64; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 24], *const u8>(&(*self) as *const [f64; 24]), 24 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(192)    }
 }
 impl RawDeserialize for [f64; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 24], Error> {
@@ -5622,10 +5621,10 @@ impl RawDeserialize for [f64; 24] {
 }
 
 impl RawSerialize for [f64; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 25], *const u8>(&(*self) as *const [f64; 25]), 25 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(200)    }
 }
 impl RawDeserialize for [f64; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 25], Error> {
@@ -5640,10 +5639,10 @@ impl RawDeserialize for [f64; 25] {
 }
 
 impl RawSerialize for [f64; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 26], *const u8>(&(*self) as *const [f64; 26]), 26 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(208)    }
 }
 impl RawDeserialize for [f64; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 26], Error> {
@@ -5658,10 +5657,10 @@ impl RawDeserialize for [f64; 26] {
 }
 
 impl RawSerialize for [f64; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 27], *const u8>(&(*self) as *const [f64; 27]), 27 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(216)    }
 }
 impl RawDeserialize for [f64; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 27], Error> {
@@ -5676,10 +5675,10 @@ impl RawDeserialize for [f64; 27] {
 }
 
 impl RawSerialize for [f64; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 28], *const u8>(&(*self) as *const [f64; 28]), 28 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(224)    }
 }
 impl RawDeserialize for [f64; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 28], Error> {
@@ -5694,10 +5693,10 @@ impl RawDeserialize for [f64; 28] {
 }
 
 impl RawSerialize for [f64; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 29], *const u8>(&(*self) as *const [f64; 29]), 29 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(232)    }
 }
 impl RawDeserialize for [f64; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 29], Error> {
@@ -5712,10 +5711,10 @@ impl RawDeserialize for [f64; 29] {
 }
 
 impl RawSerialize for [f64; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 30], *const u8>(&(*self) as *const [f64; 30]), 30 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(240)    }
 }
 impl RawDeserialize for [f64; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 30], Error> {
@@ -5730,10 +5729,10 @@ impl RawDeserialize for [f64; 30] {
 }
 
 impl RawSerialize for [f64; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 31], *const u8>(&(*self) as *const [f64; 31]), 31 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(248)    }
 }
 impl RawDeserialize for [f64; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 31], Error> {
@@ -5748,10 +5747,10 @@ impl RawDeserialize for [f64; 31] {
 }
 
 impl RawSerialize for [f64; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ f64; 32], *const u8>(&(*self) as *const [f64; 32]), 32 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(256)    }
 }
 impl RawDeserialize for [f64; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[f64; 32], Error> {
@@ -5766,10 +5765,10 @@ impl RawDeserialize for [f64; 32] {
 }
 
 impl RawSerialize for [i128; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 1], *const u8>(&(*self) as *const [i128; 1]), 1 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(8)    }
 }
 impl RawDeserialize for [i128; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 1], Error> {
@@ -5784,10 +5783,10 @@ impl RawDeserialize for [i128; 1] {
 }
 
 impl RawSerialize for [i128; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 2], *const u8>(&(*self) as *const [i128; 2]), 2 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [i128; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 2], Error> {
@@ -5802,10 +5801,10 @@ impl RawDeserialize for [i128; 2] {
 }
 
 impl RawSerialize for [i128; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 3], *const u8>(&(*self) as *const [i128; 3]), 3 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(24)    }
 }
 impl RawDeserialize for [i128; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 3], Error> {
@@ -5820,10 +5819,10 @@ impl RawDeserialize for [i128; 3] {
 }
 
 impl RawSerialize for [i128; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 4], *const u8>(&(*self) as *const [i128; 4]), 4 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [i128; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 4], Error> {
@@ -5838,10 +5837,10 @@ impl RawDeserialize for [i128; 4] {
 }
 
 impl RawSerialize for [i128; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 5], *const u8>(&(*self) as *const [i128; 5]), 5 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(40)    }
 }
 impl RawDeserialize for [i128; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 5], Error> {
@@ -5856,10 +5855,10 @@ impl RawDeserialize for [i128; 5] {
 }
 
 impl RawSerialize for [i128; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 6], *const u8>(&(*self) as *const [i128; 6]), 6 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [i128; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 6], Error> {
@@ -5874,10 +5873,10 @@ impl RawDeserialize for [i128; 6] {
 }
 
 impl RawSerialize for [i128; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 7], *const u8>(&(*self) as *const [i128; 7]), 7 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(56)    }
 }
 impl RawDeserialize for [i128; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 7], Error> {
@@ -5892,10 +5891,10 @@ impl RawDeserialize for [i128; 7] {
 }
 
 impl RawSerialize for [i128; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 8], *const u8>(&(*self) as *const [i128; 8]), 8 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [i128; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 8], Error> {
@@ -5910,10 +5909,10 @@ impl RawDeserialize for [i128; 8] {
 }
 
 impl RawSerialize for [i128; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 9], *const u8>(&(*self) as *const [i128; 9]), 9 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(72)    }
 }
 impl RawDeserialize for [i128; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 9], Error> {
@@ -5928,10 +5927,10 @@ impl RawDeserialize for [i128; 9] {
 }
 
 impl RawSerialize for [i128; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 10], *const u8>(&(*self) as *const [i128; 10]), 10 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [i128; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 10], Error> {
@@ -5946,10 +5945,10 @@ impl RawDeserialize for [i128; 10] {
 }
 
 impl RawSerialize for [i128; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 11], *const u8>(&(*self) as *const [i128; 11]), 11 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(88)    }
 }
 impl RawDeserialize for [i128; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 11], Error> {
@@ -5964,10 +5963,10 @@ impl RawDeserialize for [i128; 11] {
 }
 
 impl RawSerialize for [i128; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 12], *const u8>(&(*self) as *const [i128; 12]), 12 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [i128; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 12], Error> {
@@ -5982,10 +5981,10 @@ impl RawDeserialize for [i128; 12] {
 }
 
 impl RawSerialize for [i128; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 13], *const u8>(&(*self) as *const [i128; 13]), 13 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(104)    }
 }
 impl RawDeserialize for [i128; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 13], Error> {
@@ -6000,10 +5999,10 @@ impl RawDeserialize for [i128; 13] {
 }
 
 impl RawSerialize for [i128; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 14], *const u8>(&(*self) as *const [i128; 14]), 14 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [i128; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 14], Error> {
@@ -6018,10 +6017,10 @@ impl RawDeserialize for [i128; 14] {
 }
 
 impl RawSerialize for [i128; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 15], *const u8>(&(*self) as *const [i128; 15]), 15 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(120)    }
 }
 impl RawDeserialize for [i128; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 15], Error> {
@@ -6036,10 +6035,10 @@ impl RawDeserialize for [i128; 15] {
 }
 
 impl RawSerialize for [i128; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 16], *const u8>(&(*self) as *const [i128; 16]), 16 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [i128; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 16], Error> {
@@ -6054,10 +6053,10 @@ impl RawDeserialize for [i128; 16] {
 }
 
 impl RawSerialize for [i128; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 17], *const u8>(&(*self) as *const [i128; 17]), 17 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(136)    }
 }
 impl RawDeserialize for [i128; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 17], Error> {
@@ -6072,10 +6071,10 @@ impl RawDeserialize for [i128; 17] {
 }
 
 impl RawSerialize for [i128; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 18], *const u8>(&(*self) as *const [i128; 18]), 18 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(144)    }
 }
 impl RawDeserialize for [i128; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 18], Error> {
@@ -6090,10 +6089,10 @@ impl RawDeserialize for [i128; 18] {
 }
 
 impl RawSerialize for [i128; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 19], *const u8>(&(*self) as *const [i128; 19]), 19 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(152)    }
 }
 impl RawDeserialize for [i128; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 19], Error> {
@@ -6108,10 +6107,10 @@ impl RawDeserialize for [i128; 19] {
 }
 
 impl RawSerialize for [i128; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 20], *const u8>(&(*self) as *const [i128; 20]), 20 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(160)    }
 }
 impl RawDeserialize for [i128; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 20], Error> {
@@ -6126,10 +6125,10 @@ impl RawDeserialize for [i128; 20] {
 }
 
 impl RawSerialize for [i128; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 21], *const u8>(&(*self) as *const [i128; 21]), 21 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(168)    }
 }
 impl RawDeserialize for [i128; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 21], Error> {
@@ -6144,10 +6143,10 @@ impl RawDeserialize for [i128; 21] {
 }
 
 impl RawSerialize for [i128; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 22], *const u8>(&(*self) as *const [i128; 22]), 22 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(176)    }
 }
 impl RawDeserialize for [i128; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 22], Error> {
@@ -6162,10 +6161,10 @@ impl RawDeserialize for [i128; 22] {
 }
 
 impl RawSerialize for [i128; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 23], *const u8>(&(*self) as *const [i128; 23]), 23 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(184)    }
 }
 impl RawDeserialize for [i128; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 23], Error> {
@@ -6180,10 +6179,10 @@ impl RawDeserialize for [i128; 23] {
 }
 
 impl RawSerialize for [i128; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 24], *const u8>(&(*self) as *const [i128; 24]), 24 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(192)    }
 }
 impl RawDeserialize for [i128; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 24], Error> {
@@ -6198,10 +6197,10 @@ impl RawDeserialize for [i128; 24] {
 }
 
 impl RawSerialize for [i128; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 25], *const u8>(&(*self) as *const [i128; 25]), 25 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(200)    }
 }
 impl RawDeserialize for [i128; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 25], Error> {
@@ -6216,10 +6215,10 @@ impl RawDeserialize for [i128; 25] {
 }
 
 impl RawSerialize for [i128; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 26], *const u8>(&(*self) as *const [i128; 26]), 26 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(208)    }
 }
 impl RawDeserialize for [i128; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 26], Error> {
@@ -6234,10 +6233,10 @@ impl RawDeserialize for [i128; 26] {
 }
 
 impl RawSerialize for [i128; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 27], *const u8>(&(*self) as *const [i128; 27]), 27 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(216)    }
 }
 impl RawDeserialize for [i128; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 27], Error> {
@@ -6252,10 +6251,10 @@ impl RawDeserialize for [i128; 27] {
 }
 
 impl RawSerialize for [i128; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 28], *const u8>(&(*self) as *const [i128; 28]), 28 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(224)    }
 }
 impl RawDeserialize for [i128; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 28], Error> {
@@ -6270,10 +6269,10 @@ impl RawDeserialize for [i128; 28] {
 }
 
 impl RawSerialize for [i128; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 29], *const u8>(&(*self) as *const [i128; 29]), 29 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(232)    }
 }
 impl RawDeserialize for [i128; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 29], Error> {
@@ -6288,10 +6287,10 @@ impl RawDeserialize for [i128; 29] {
 }
 
 impl RawSerialize for [i128; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 30], *const u8>(&(*self) as *const [i128; 30]), 30 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(240)    }
 }
 impl RawDeserialize for [i128; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 30], Error> {
@@ -6306,10 +6305,10 @@ impl RawDeserialize for [i128; 30] {
 }
 
 impl RawSerialize for [i128; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 31], *const u8>(&(*self) as *const [i128; 31]), 31 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(248)    }
 }
 impl RawDeserialize for [i128; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 31], Error> {
@@ -6324,10 +6323,10 @@ impl RawDeserialize for [i128; 31] {
 }
 
 impl RawSerialize for [i128; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ i128; 32], *const u8>(&(*self) as *const [i128; 32]), 32 * 8)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(256)    }
 }
 impl RawDeserialize for [i128; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[i128; 32], Error> {
@@ -6342,10 +6341,10 @@ impl RawDeserialize for [i128; 32] {
 }
 
 impl RawSerialize for [u128; 1] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 1], *const u8>(&(*self) as *const [u128; 1]), 1 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(16)    }
 }
 impl RawDeserialize for [u128; 1] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 1], Error> {
@@ -6360,10 +6359,10 @@ impl RawDeserialize for [u128; 1] {
 }
 
 impl RawSerialize for [u128; 2] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 2], *const u8>(&(*self) as *const [u128; 2]), 2 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(32)    }
 }
 impl RawDeserialize for [u128; 2] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 2], Error> {
@@ -6378,10 +6377,10 @@ impl RawDeserialize for [u128; 2] {
 }
 
 impl RawSerialize for [u128; 3] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 3], *const u8>(&(*self) as *const [u128; 3]), 3 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(48)    }
 }
 impl RawDeserialize for [u128; 3] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 3], Error> {
@@ -6396,10 +6395,10 @@ impl RawDeserialize for [u128; 3] {
 }
 
 impl RawSerialize for [u128; 4] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 4], *const u8>(&(*self) as *const [u128; 4]), 4 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(64)    }
 }
 impl RawDeserialize for [u128; 4] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 4], Error> {
@@ -6414,10 +6413,10 @@ impl RawDeserialize for [u128; 4] {
 }
 
 impl RawSerialize for [u128; 5] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 5], *const u8>(&(*self) as *const [u128; 5]), 5 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(80)    }
 }
 impl RawDeserialize for [u128; 5] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 5], Error> {
@@ -6432,10 +6431,10 @@ impl RawDeserialize for [u128; 5] {
 }
 
 impl RawSerialize for [u128; 6] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 6], *const u8>(&(*self) as *const [u128; 6]), 6 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(96)    }
 }
 impl RawDeserialize for [u128; 6] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 6], Error> {
@@ -6450,10 +6449,10 @@ impl RawDeserialize for [u128; 6] {
 }
 
 impl RawSerialize for [u128; 7] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 7], *const u8>(&(*self) as *const [u128; 7]), 7 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(112)    }
 }
 impl RawDeserialize for [u128; 7] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 7], Error> {
@@ -6468,10 +6467,10 @@ impl RawDeserialize for [u128; 7] {
 }
 
 impl RawSerialize for [u128; 8] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 8], *const u8>(&(*self) as *const [u128; 8]), 8 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(128)    }
 }
 impl RawDeserialize for [u128; 8] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 8], Error> {
@@ -6486,10 +6485,10 @@ impl RawDeserialize for [u128; 8] {
 }
 
 impl RawSerialize for [u128; 9] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 9], *const u8>(&(*self) as *const [u128; 9]), 9 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(144)    }
 }
 impl RawDeserialize for [u128; 9] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 9], Error> {
@@ -6504,10 +6503,10 @@ impl RawDeserialize for [u128; 9] {
 }
 
 impl RawSerialize for [u128; 10] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 10], *const u8>(&(*self) as *const [u128; 10]), 10 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(160)    }
 }
 impl RawDeserialize for [u128; 10] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 10], Error> {
@@ -6522,10 +6521,10 @@ impl RawDeserialize for [u128; 10] {
 }
 
 impl RawSerialize for [u128; 11] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 11], *const u8>(&(*self) as *const [u128; 11]), 11 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(176)    }
 }
 impl RawDeserialize for [u128; 11] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 11], Error> {
@@ -6540,10 +6539,10 @@ impl RawDeserialize for [u128; 11] {
 }
 
 impl RawSerialize for [u128; 12] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 12], *const u8>(&(*self) as *const [u128; 12]), 12 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(192)    }
 }
 impl RawDeserialize for [u128; 12] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 12], Error> {
@@ -6558,10 +6557,10 @@ impl RawDeserialize for [u128; 12] {
 }
 
 impl RawSerialize for [u128; 13] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 13], *const u8>(&(*self) as *const [u128; 13]), 13 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(208)    }
 }
 impl RawDeserialize for [u128; 13] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 13], Error> {
@@ -6576,10 +6575,10 @@ impl RawDeserialize for [u128; 13] {
 }
 
 impl RawSerialize for [u128; 14] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 14], *const u8>(&(*self) as *const [u128; 14]), 14 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(224)    }
 }
 impl RawDeserialize for [u128; 14] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 14], Error> {
@@ -6594,10 +6593,10 @@ impl RawDeserialize for [u128; 14] {
 }
 
 impl RawSerialize for [u128; 15] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 15], *const u8>(&(*self) as *const [u128; 15]), 15 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(240)    }
 }
 impl RawDeserialize for [u128; 15] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 15], Error> {
@@ -6612,10 +6611,10 @@ impl RawDeserialize for [u128; 15] {
 }
 
 impl RawSerialize for [u128; 16] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 16], *const u8>(&(*self) as *const [u128; 16]), 16 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(256)    }
 }
 impl RawDeserialize for [u128; 16] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 16], Error> {
@@ -6630,10 +6629,10 @@ impl RawDeserialize for [u128; 16] {
 }
 
 impl RawSerialize for [u128; 17] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 17], *const u8>(&(*self) as *const [u128; 17]), 17 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(272)    }
 }
 impl RawDeserialize for [u128; 17] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 17], Error> {
@@ -6648,10 +6647,10 @@ impl RawDeserialize for [u128; 17] {
 }
 
 impl RawSerialize for [u128; 18] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 18], *const u8>(&(*self) as *const [u128; 18]), 18 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(288)    }
 }
 impl RawDeserialize for [u128; 18] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 18], Error> {
@@ -6666,10 +6665,10 @@ impl RawDeserialize for [u128; 18] {
 }
 
 impl RawSerialize for [u128; 19] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 19], *const u8>(&(*self) as *const [u128; 19]), 19 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(304)    }
 }
 impl RawDeserialize for [u128; 19] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 19], Error> {
@@ -6684,10 +6683,10 @@ impl RawDeserialize for [u128; 19] {
 }
 
 impl RawSerialize for [u128; 20] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 20], *const u8>(&(*self) as *const [u128; 20]), 20 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(320)    }
 }
 impl RawDeserialize for [u128; 20] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 20], Error> {
@@ -6702,10 +6701,10 @@ impl RawDeserialize for [u128; 20] {
 }
 
 impl RawSerialize for [u128; 21] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 21], *const u8>(&(*self) as *const [u128; 21]), 21 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(336)    }
 }
 impl RawDeserialize for [u128; 21] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 21], Error> {
@@ -6720,10 +6719,10 @@ impl RawDeserialize for [u128; 21] {
 }
 
 impl RawSerialize for [u128; 22] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 22], *const u8>(&(*self) as *const [u128; 22]), 22 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(352)    }
 }
 impl RawDeserialize for [u128; 22] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 22], Error> {
@@ -6738,10 +6737,10 @@ impl RawDeserialize for [u128; 22] {
 }
 
 impl RawSerialize for [u128; 23] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 23], *const u8>(&(*self) as *const [u128; 23]), 23 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(368)    }
 }
 impl RawDeserialize for [u128; 23] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 23], Error> {
@@ -6756,10 +6755,10 @@ impl RawDeserialize for [u128; 23] {
 }
 
 impl RawSerialize for [u128; 24] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 24], *const u8>(&(*self) as *const [u128; 24]), 24 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(384)    }
 }
 impl RawDeserialize for [u128; 24] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 24], Error> {
@@ -6774,10 +6773,10 @@ impl RawDeserialize for [u128; 24] {
 }
 
 impl RawSerialize for [u128; 25] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 25], *const u8>(&(*self) as *const [u128; 25]), 25 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(400)    }
 }
 impl RawDeserialize for [u128; 25] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 25], Error> {
@@ -6792,10 +6791,10 @@ impl RawDeserialize for [u128; 25] {
 }
 
 impl RawSerialize for [u128; 26] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 26], *const u8>(&(*self) as *const [u128; 26]), 26 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(416)    }
 }
 impl RawDeserialize for [u128; 26] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 26], Error> {
@@ -6810,10 +6809,10 @@ impl RawDeserialize for [u128; 26] {
 }
 
 impl RawSerialize for [u128; 27] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 27], *const u8>(&(*self) as *const [u128; 27]), 27 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(432)    }
 }
 impl RawDeserialize for [u128; 27] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 27], Error> {
@@ -6828,10 +6827,10 @@ impl RawDeserialize for [u128; 27] {
 }
 
 impl RawSerialize for [u128; 28] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 28], *const u8>(&(*self) as *const [u128; 28]), 28 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(448)    }
 }
 impl RawDeserialize for [u128; 28] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 28], Error> {
@@ -6846,10 +6845,10 @@ impl RawDeserialize for [u128; 28] {
 }
 
 impl RawSerialize for [u128; 29] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 29], *const u8>(&(*self) as *const [u128; 29]), 29 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(464)    }
 }
 impl RawDeserialize for [u128; 29] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 29], Error> {
@@ -6864,10 +6863,10 @@ impl RawDeserialize for [u128; 29] {
 }
 
 impl RawSerialize for [u128; 30] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 30], *const u8>(&(*self) as *const [u128; 30]), 30 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(480)    }
 }
 impl RawDeserialize for [u128; 30] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 30], Error> {
@@ -6882,10 +6881,10 @@ impl RawDeserialize for [u128; 30] {
 }
 
 impl RawSerialize for [u128; 31] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 31], *const u8>(&(*self) as *const [u128; 31]), 31 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(496)    }
 }
 impl RawDeserialize for [u128; 31] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 31], Error> {
@@ -6900,10 +6899,10 @@ impl RawDeserialize for [u128; 31] {
 }
 
 impl RawSerialize for [u128; 32] {
-     fn raw_serialize(&self, to: &mut Write) -> Result<(), Error> {
+     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
         let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ u128; 32], *const u8>(&(*self) as *const [u128; 32]), 32 * 16)};
         check!(to.write_all(y));
-        Ok(())    }
+        Ok(512)    }
 }
 impl RawDeserialize for [u128; 32] {
     fn raw_deserialize(from: &mut Read) -> Result<[u128; 32], Error> {

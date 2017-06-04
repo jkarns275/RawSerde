@@ -6,18 +6,18 @@ for ty in tys:gmatch("%w+") do
 	for len in lens:gmatch("%d+") do
 		print(
 "\nimpl RawSerialize for [" .. ty .. "; " .. len .. "] ".. "{\n "
-.. "    fn serialize(&self, to: &mut Write) -> Result<(), Error> {\n"
-  .. "        let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ " .. ty .. "; " .. len .. "], *const u8>(&(*self) as *const [" .. ty .. "; " .. len .. "]), ".. len .." * " .. size[i] .. ")};\n"
+.. "    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {\n"
+.. "        let y = unsafe { slice::from_raw_parts(mem::transmute::<*const [ " .. ty .. "; " .. len .. "], *const u8>(&(*self) as *const [" .. ty .. "; " .. len .. "]), ".. len .." * " .. size[i] .. ")};\n"
 .. "        check!(to.write_all(y));\n"
-.. "        Ok(())"
+.. "        Ok(" .. tonumber(len) * size[i]  .. ")"
 .. "    }\n"
 .. "}\nimpl RawDeserialize for [" .. ty .. "; " .. len .. "] {\n"
-.. "    fn deserialize(from: &mut Read) -> Result<[" .. ty .. "; " .. len .. "], Error> {\n"
+.. "    fn raw_deserialize(from: &mut Read) -> Result<[" .. ty .. "; " .. len .. "], Error> {\n"
 .. "        unsafe { let mut buffer: [" .. ty .. "; " .. len .. "] = [0" .. ty .. "; " .. len .. "];\n"
   .. "        {\n            check!(from.read_exact(slice::from_raw_parts_mut( mem::transmute::<*mut [ " .. ty .. "; " .. len .. "], *mut u8>((&mut buffer) as *mut [" .. ty .. "; " .. len .. "]), " .. tonumber(len) * size[i] .. ")));\n        }\n"
 .. "        Ok(buffer)\n"
 .. "        }\n    }\n"
-.. "\n}") 
+.. "\n}")
 	end
 i = i + 1
 end

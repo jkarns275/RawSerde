@@ -10,7 +10,9 @@ pub mod serialize;
 pub mod deserialize;
 pub mod primitives;
 pub mod array;
+pub mod option;
 
+pub use option::*;
 pub use serialize::RawSerialize;
 pub use deserialize::RawDeserialize;
 pub use collections::*;
@@ -76,5 +78,3 @@ mod tests {
         println!("{:?}", x);
     }
 }
-
-
