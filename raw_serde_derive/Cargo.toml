@@ -2,7 +2,8 @@
 name = "raw_serde_derive"
 version = "0.1.0"
 authors = ["Joshua Karns <jkarns275@gmail.com>"]
-
+license = "MIT"
+description = "A serialization library that allows raw serialization and deserialization of non reference types"
 [lib]
 proc-macro = true
 
