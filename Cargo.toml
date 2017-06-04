@@ -5,4 +5,4 @@ authors = ["Joshua Karns <jkarns275@gmail.com>"]
 
 [dependencies]
 check = "*"
-raw_serde_derive = { path = "raw_serde_derive" }
+raw_serde_derive = { path = "raw_serde_derive", version = "0.1.0" }
