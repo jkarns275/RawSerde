@@ -1,6 +1,6 @@
 [package]
 name = "raw_serde_derive"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Joshua Karns <jkarns275@gmail.com>"]
 license = "MIT"
 description = "Automatically derives the RawSerialize and RawDeserialize traits for raw_serde"

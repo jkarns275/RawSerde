@@ -12,6 +12,7 @@ pub mod primitives;
 pub mod array;
 pub mod option;
 
+pub use raw_serde_derive::*;
 pub use option::*;
 pub use serialize::RawSerialize;
 pub use deserialize::RawDeserialize;
@@ -36,6 +37,9 @@ mod tests {
 	      y: i32,
         z: i128
     }
+
+    #[derive(RawSerialize, RawDeserialize, Debug, PartialEq, Eq)]
+    struct test_struct2(pub i32, pub i32, pub i64);
 
     #[test]
     fn test_vec() {
@@ -67,13 +71,13 @@ mod tests {
         let mut file = OpenOptions::new().read(true).write(true).create(true).open("test_vec_simple.dat").unwrap();
         let mut test = vec![];
         for _ in 0..10 {
-            let z = test_struct { x: rand(), y: rand(), z: rand() as i128 * 1000 };
+            let z = test_struct2(rand(), rand(), rand() as i64 * 1000);
             println!("{:?}", z);
             test.push(z);
         }
         test.raw_serialize(&mut file).unwrap();
         file.seek(SeekFrom::Start(0)).unwrap();
-        let x = test_struct::raw_deserialize_vec(&mut file).unwrap();
+        let x = test_struct2::raw_deserialize_vec(&mut file).unwrap();
         assert!(test == x);
         println!("{:?}", x);
     }

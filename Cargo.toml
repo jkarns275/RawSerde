@@ -1,9 +1,9 @@
 [package]
 name = "raw_serde"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 description = "A serialization library"
 authors = ["Joshua Karns <jkarns275@gmail.com>"]
 
 [dependencies]
-raw_serde_derive = { path = "raw_serde_derive", version = "0.1.0" }
+raw_serde_derive = { path = "raw_serde_derive", version = "0.1.1" }
