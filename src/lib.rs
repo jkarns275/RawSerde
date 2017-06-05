@@ -11,7 +11,9 @@ pub mod deserialize;
 pub mod primitives;
 pub mod array;
 pub mod option;
+pub mod tuple;
 
+pub use tuple::*;
 pub use raw_serde_derive::*;
 pub use option::*;
 pub use serialize::RawSerialize;
