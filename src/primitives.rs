@@ -17,8 +17,7 @@ const SIZE_OF_I16: usize = 2;
 const SIZE_OF_I8:  usize = 1;
 
 
-
-
+/// Serializing usize should be avoided if you want your data to be portable.
 impl RawSerialize for usize {
     #[inline(always)]
     fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
@@ -31,6 +30,8 @@ impl RawSerialize for usize {
         }
     }
 }
+
+/// Serializing usize should be avoided if you want your data to be portable.
 impl RawDeserialize for usize {
     #[inline(always)]
     fn raw_deserialize(from: &mut Read) -> Result<Self, Error> {
@@ -42,6 +43,8 @@ impl RawDeserialize for usize {
     }
 }
 
+/// Generates code to serialize primitives, uses a bit of unsafe code to (hopefully)
+/// speed things up.
 macro_rules! serialize_primitive {
     ( $prim:ty, $size:expr ) => (
         impl RawSerialize for $prim {

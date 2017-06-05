@@ -1,3 +1,4 @@
+/// A useful macro that reduces code bloat during error handling.
 #[macro_export]
 macro_rules! check {
     ( $e:expr ) => (
