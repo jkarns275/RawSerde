@@ -37,6 +37,7 @@ mod tests {
     struct test_struct {
 	      x: i32,
 	      y: i32,
+          t: [i32; 5],
         z: i128
     }
 
