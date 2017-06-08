@@ -57,7 +57,6 @@ fn impl_raw_serialize_struct(data: Vec<syn::Field>, ast: &syn::MacroInput) -> qu
             }
         }
     };
-    println!("sestr: {:?}", ret);
     ret
 }
 
@@ -86,7 +85,6 @@ fn impl_raw_serialize_tuple(data: Vec<syn::Field>, ast: &syn::MacroInput) -> quo
             }
         }
     };
-    println!("setup: {:?}", ret);
     ret
 }
 
@@ -140,12 +138,17 @@ fn impl_raw_deserialize_struct(data: Vec<syn::Field>, ast: &syn::MacroInput) -> 
     let dclone_1 = data_fields.clone();
     let dclone_2 = data_fields.clone();
     let dclone_3 = data_fields.clone();
+    let dclone_4 = data_fields.clone();
+
     let ret = quote! {
         impl #impl_generics RawDeserialize #ty_generics for #name #where_clause {
             fn raw_deserialize(from: &mut std::io::Read) -> Result<#name, std::io::Error> {
                 #(
                     let #dclone_1;
-                    check!(#data_ty::raw_deserialize(from), #dclone_2);
+                    {
+                        type __T = #data_ty;
+                        check!(__T::raw_deserialize(from), #dclone_2);
+                    }
                 )*
                 Ok(#name {
                     #(#dclone_3: #data_fields),*
@@ -182,7 +185,10 @@ fn impl_raw_deserialize_tuple(data: Vec<syn::Field>, ast: &syn::MacroInput) -> q
             fn raw_deserialize(from: &mut std::io::Read) -> Result<#name, std::io::Error> {
                 #(
                     let #dclone_1;
-                    check!(#data_ty::raw_deserialize(from), #dclone_2);
+                    {
+                        type __T = #data_ty;
+                        check!(__T::raw_deserialize(from), #dclone_2);
+                    }
                 )*
                 Ok(#name(
                     #(#dclone_3),*
