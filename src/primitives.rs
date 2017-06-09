@@ -16,6 +16,27 @@ const SIZE_OF_I32: usize = 4;
 const SIZE_OF_I16: usize = 2;
 const SIZE_OF_I8:  usize = 1;
 
+/// Serializing usize should be avoided if you want your data to be portable.
+impl RawSerialize for bool {
+    #[inline(always)]
+    fn raw_serialize(&self, to: &mut Write) -> Result<u64, Error> {
+        if *self {
+            1u8.raw_serialize(to)
+        } else {
+            0u8.raw_serialize(to)
+        }
+    }
+}
+
+/// Serializing usize should be avoided if you want your data to be portable.
+impl RawDeserialize for usize {
+    #[inline(always)]
+    fn raw_deserialize(from: &mut Read) -> Result<Self, Error> {
+        let x;
+        check!(u8::raw_deserialize(from), x);
+        Ok(x == 1)
+    }
+}
 
 /// Serializing usize should be avoided if you want your data to be portable.
 impl RawSerialize for usize {
