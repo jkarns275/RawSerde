@@ -29,7 +29,7 @@ impl RawSerialize for bool {
 }
 
 /// Serializing usize should be avoided if you want your data to be portable.
-impl RawDeserialize for usize {
+impl RawDeserialize for bool {
     #[inline(always)]
     fn raw_deserialize(from: &mut Read) -> Result<Self, Error> {
         let x;
